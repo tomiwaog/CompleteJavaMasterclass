@@ -148,7 +148,7 @@ public class CarPoly {
 		System.out.println(r25.accelerate(40));
 		System.out.println(r25.brake(30)+"\n");
 		
-		
+		//Creating an in-line class
 		Autoy toyota = new Autoy("Toyota Camri", 8){
 			@Override
 			public String startEngine(){
