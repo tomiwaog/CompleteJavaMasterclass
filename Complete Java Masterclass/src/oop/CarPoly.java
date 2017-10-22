@@ -98,8 +98,6 @@ class Merc extends Autoy{
 	}
 }
 
-
-
 class Renault extends Autoy{
 
 	public Renault(String name, int cylinders) {
@@ -126,6 +124,31 @@ class Renault extends Autoy{
 }
 
 public class CarPoly {
+	
+	static class Ford extends Autoy{
+
+		public Ford(String name, int cylinders) {
+			super(name, cylinders);
+		}
+
+		@Override
+		public String startEngine(){
+			return getClass().getSimpleName() + " -> startEngine()";		
+		}
+
+		@Override
+		public String accelerate(int speed) {
+			return getClass().getSimpleName() + " -> Accelerate()";
+		}
+
+		@Override
+		public String brake(int brakeSpeed) {
+			return getClass().getSimpleName() + " -> brake()";
+		}
+	}
+	
+
+	
 	public static void main(String[] args) {
 		Autoy gen = new Autoy("Made in China",5);
 		System.out.println(gen.startEngine());
@@ -165,11 +188,16 @@ public class CarPoly {
 				return "Toyota -> brake()";
 			}
 		};
-		
-		
 		System.out.println(toyota.startEngine());
 		System.out.println(toyota.accelerate(40));
-		System.out.println(toyota.brake(30));
+		System.out.println(toyota.brake(30)+"\n");
+		
+		
+		Ford focus = new Ford ("Ford focus", 5);
+		System.out.println(focus.startEngine());
+		System.out.println(focus.accelerate(40));
+		System.out.println(focus.brake(30));
+
 		
 		
 	}
