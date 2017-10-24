@@ -2,7 +2,6 @@ package Projects;
 
 import java.util.ArrayList;
 
-
 class Extras {
 	// State variables / fields
 	String name;
@@ -63,7 +62,7 @@ class HamBurgers {
 	private String meat;
 	protected int numToppings; // Encapsulation - Data hiding
 	protected double price;
-	protected double totalPrice;
+	protected double totalPrice = 0;
 	public ArrayList<Extras> extras = new ArrayList<Extras>(); // Java
 																// Collections
 
@@ -82,6 +81,10 @@ class HamBurgers {
 		this.price = price;
 		this.name = name;
 		totalPrice += price; // add to total price
+		System.out.println(getName() + " " + getClass().getSimpleName()
+				+ " on a " + rollType.getType() + " with " + this.meat + ": "
+				+ price);
+
 	}
 
 	public boolean addToppings(Toppings topping) {
@@ -90,6 +93,7 @@ class HamBurgers {
 			numToppings++;
 			totalPrice += topping.getPrice();
 			extras.add(topping);
+			System.out.println("Added " + topping.name + ": " + topping.price);
 			return true;
 		} else {
 			System.out.println("Cannot add more than 4 toppings to base");
@@ -102,6 +106,7 @@ class HamBurgers {
 		if (getClass().getSimpleName().equals("DeluxeBurgers"))
 			drink.price = 0;
 		extras.add(drink);
+		System.out.println("Added " + drink.name + ": " + drink.price);
 		totalPrice += drink.price;
 	}
 
@@ -110,6 +115,7 @@ class HamBurgers {
 		if (getClass().getSimpleName().equals("DeluxeBurgers"))
 			chips.price = 0;
 		extras.add(chips);
+		System.out.println("Added " + chips.name + ": " + chips.price);
 		totalPrice += chips.price;
 	}
 
@@ -131,33 +137,24 @@ class HamBurgers {
 	}
 
 	public double myTotal() {
-		System.out.println("");
-		System.out.println("Burger Type : " + getClass().getSimpleName());
-		System.out.println("Store Name: " + getName());
-		System.out.println("Bread Type: " + rollType.getType());
-		System.out.println("Base price: " + price);
-
-		//Conditional statements
-		if (!getClass().getSimpleName().equals("DeluxeBurgers")) { //Comparison operators
-			System.out.println("No of Toppings: " + getNumToppings());
-		} else {
-			System.out.println("Chips AND Coke added for free");
-			;
+		// Conditional statements
+		if (getNumToppings() > 0) {
+			if (!getClass().getSimpleName().equals("DeluxeBurgers")) { // Comparison
+																		// operators
+				System.out.println("No of Toppings: " + getNumToppings());
+			} else {
+				System.out.println("Chips AND Coke added for free");
+			}
+			String extrasReader = ""; // Local variable
+			// Loops
+			for (Extras objecto : extras) {
+				extrasReader += objecto.name + ", ";
+			}
+			extrasReader = extrasReader.substring(0, extrasReader.length() - 2);
+			// removes whitespace & rids last comma
+			System.out.println("Extras: " + extrasReader);
 		}
-
-		String extrasReader = ""; // Local variable
-		//Loops
-		for (Extras objecto : extras) {
-			extrasReader += objecto.name + ", ";
-		}
-		extrasReader = extrasReader.substring(0, extrasReader.length() - 2); // removes
-																				// whitespace
-																				// &
-																				// rids
-																				// last
-																				// comma
-		System.out.println("Extras: " + extrasReader);
-		System.out.println("Burger price: " + getTotalPrice());
+		System.out.println("Total price: £" + getTotalPrice() + "\n");
 		return totalPrice;
 	}
 
@@ -171,11 +168,6 @@ class DeluxeBurgers extends HamBurgers {
 	public DeluxeBurgers(String name, BreadRoll rollType, String meat,
 			double price) {
 		super(name, rollType, meat, price);
-		this.name = name;
-	}
-
-	public DeluxeBurgers() {
-		super();
 	}
 
 	// Polymorphism - Overriding
@@ -185,38 +177,74 @@ class DeluxeBurgers extends HamBurgers {
 }
 
 class HealthyBurger extends HamBurgers {
+	Toppings lentis = new Toppings("Cheese", 1.13);
+	static BreadRoll ryoBreado = new BreadRoll("Rye Bread");
 
 	public HealthyBurger(String name, BreadRoll rollType, String meat,
 			double price) {
 		super(name, rollType, meat, price);
 	}
+
+	public HealthyBurger(String meat, double price) {
+		super("Virgin Burger", ryoBreado, meat, price);
+	}
+
+	public boolean addToppings(Toppings topping) {
+		// Max topping allowed on base is 4
+		if (getNumToppings() < 4) {
+			numToppings++;
+			totalPrice += topping.getPrice();
+			extras.add(topping);
+			System.out.println("Added " + topping.name + ": " + topping.price);
+			return true;
+		} else {
+			System.out.println("Cannot add more than 4 toppings to base");
+			return false;
+		}
+	}
+
+	@Override
+	public double getTotalPrice() {
+		// TODO Auto-generated method stub
+		return super.getTotalPrice();
+	}
+
 }
 
 public class BillBurgers {
 
 	public static void main(String[] args) {
-		Toppings lettuce = new Toppings("Lettuce", 3);
+		Toppings lettuce = new Toppings("Lettuce", 0.75);
 		Toppings carrots = new Toppings("Carrots", 2);
-		Toppings tomatoes = new Toppings("Tomatoes", 1.50);
-		BreadRoll basicBread = new BreadRoll("Normal type");
+		Toppings tomatoes = new Toppings("Tomatoes", 0.27);
+		Toppings cheese = new Toppings("Cheese", 1.13);
+
+		BreadRoll basicBread = new BreadRoll("White Roll");
 		BreadRoll ryoBread = new BreadRoll("Rye Bread");
 
 		Drinks coke = new Drinks("Coke", 2.00);
 		Chips chips = new Chips("Chips", 1.50);
 
-		HamBurgers md = new HamBurgers("MacDee", basicBread, "meat", 6);
+		HamBurgers md = new HamBurgers("Basic", basicBread, "Sausage", 3.56);
+
 		md.addToppings(lettuce);
 		md.addToppings(tomatoes);
-		System.out.println(md.myTotal());
+		md.addToppings(cheese);
+
+		md.myTotal();
 
 		HealthyBurger vego = new HealthyBurger("VegeDeluxe", ryoBread,
 				"fake meat", 8);
-		vego.addToppings(carrots);
+		vego.addToppings(cheese);
 		vego.addToppings(tomatoes);
 		vego.addToppings(lettuce);
 		vego.addDrinks(coke);
 		vego.addChips(chips);
-		System.out.println(vego.myTotal());
+		vego.myTotal();
+
+		HealthyBurger virgin = new HealthyBurger("fish meat", 6.50);
+		virgin.addDrinks(coke);
+		virgin.myTotal();
 
 		DeluxeBurgers vip = new DeluxeBurgers("VIP Milla", ryoBread, "meat", 12);
 		vip.addToppings(carrots);
@@ -224,7 +252,7 @@ public class BillBurgers {
 		vip.addToppings(lettuce);
 		vip.addDrinks(coke);
 		vip.addChips(chips);
-		System.out.println(vip.myTotal());
+		vip.myTotal();
 
 	}
 }
