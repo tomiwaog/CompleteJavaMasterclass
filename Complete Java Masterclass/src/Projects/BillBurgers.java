@@ -2,12 +2,13 @@ package Projects;
 
 import java.util.ArrayList;
 
+
 class Extras {
+	// State variables / fields
 	String name;
 	double price;
 
 	public Extras(String name, double price) {
-		super();
 		this.name = name;
 		this.price = price;
 	}
@@ -22,6 +23,7 @@ class Extras {
 }
 
 class Toppings extends Extras {
+	// Inheritance
 	public Toppings(String name, double price) {
 		super(name, price);
 	}
@@ -55,30 +57,35 @@ class BreadRoll {
 }
 
 class HamBurgers {
-	protected BreadRoll rollType;
+	protected BreadRoll rollType; // Composition
 	private Toppings topping;
 	protected String name;
 	private String meat;
-	protected int numToppings;
+	protected int numToppings; // Encapsulation - Data hiding
 	protected double price;
 	protected double totalPrice;
-	public ArrayList<Extras> extras = new ArrayList<Extras>();
+	public ArrayList<Extras> extras = new ArrayList<Extras>(); // Java
+																// Collections
 
 	public String getName() {
 		return name;
 	}
 
+	public HamBurgers() {
+	}
+
+	// Polymorphism - Overloading
 	public HamBurgers(String name, BreadRoll rollType, String meat, double price) {
 		super();
 		this.rollType = rollType;
 		this.meat = meat;
 		this.price = price;
 		this.name = name;
-		totalPrice += price; //add to total price
+		totalPrice += price; // add to total price
 	}
 
 	public boolean addToppings(Toppings topping) {
-		//Max topping allowed on base is 4
+		// Max topping allowed on base is 4
 		if (getNumToppings() < 4) {
 			numToppings++;
 			totalPrice += topping.getPrice();
@@ -91,24 +98,26 @@ class HamBurgers {
 	}
 
 	public void addDrinks(Drinks drink) {
-		//Free drinks with Deluxe type burgers
+		// Free drinks with Deluxe type burgers
 		if (getClass().getSimpleName().equals("DeluxeBurgers"))
-			drink.price=0;
+			drink.price = 0;
 		extras.add(drink);
-		totalPrice +=drink.price;	
+		totalPrice += drink.price;
 	}
 
-	//Free drinks with deluxe burgers only
-	public void addChips(Chips chips){
+	// Free drinks with deluxe burgers only
+	public void addChips(Chips chips) {
 		if (getClass().getSimpleName().equals("DeluxeBurgers"))
-		chips.price=0;
+			chips.price = 0;
 		extras.add(chips);
-		totalPrice +=chips.price;
+		totalPrice += chips.price;
 	}
+
 	public BreadRoll getRollType() {
 		return rollType;
 	}
 
+	// Accessors - getters
 	public Toppings getTopping() {
 		return topping;
 	}
@@ -128,18 +137,26 @@ class HamBurgers {
 		System.out.println("Bread Type: " + rollType.getType());
 		System.out.println("Base price: " + price);
 
-		if (!getClass().getSimpleName().equals("DeluxeBurgers")) {
+		//Conditional statements
+		if (!getClass().getSimpleName().equals("DeluxeBurgers")) { //Comparison operators
 			System.out.println("No of Toppings: " + getNumToppings());
 		} else {
-			System.out.println("Chips AND Coke added for free");;
+			System.out.println("Chips AND Coke added for free");
+			;
 		}
-		
-		String extrasReader = "";
-		for (Extras objecto: extras){
-			extrasReader+=objecto.name+", ";
+
+		String extrasReader = ""; // Local variable
+		//Loops
+		for (Extras objecto : extras) {
+			extrasReader += objecto.name + ", ";
 		}
-		extrasReader= extrasReader.substring(0,extrasReader.length()-2); //removes whitespace & rids last comma
-		System.out.println("Extras: " +extrasReader );
+		extrasReader = extrasReader.substring(0, extrasReader.length() - 2); // removes
+																				// whitespace
+																				// &
+																				// rids
+																				// last
+																				// comma
+		System.out.println("Extras: " + extrasReader);
 		System.out.println("Burger price: " + getTotalPrice());
 		return totalPrice;
 	}
@@ -156,7 +173,13 @@ class DeluxeBurgers extends HamBurgers {
 		super(name, rollType, meat, price);
 		this.name = name;
 	}
-	public boolean addToppings(Toppings topping){
+
+	public DeluxeBurgers() {
+		super();
+	}
+
+	// Polymorphism - Overriding
+	public boolean addToppings(Toppings topping) {
 		return false;
 	}
 }
