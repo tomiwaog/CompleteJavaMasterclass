@@ -36,6 +36,13 @@ public class SortArrayDescend {
 		for (int eacho : resultArr) {
 			System.out.print(eacho + " ");
 		}
+		
+		//Testing Resized Array
+		sortedArr =resizeArray(sortedArr, 4); //Added for more space to Arr
+		sortedArr[sortedArr.length-1]=500;	
+		for (int i=0;i<sortedArr.length;i++)
+			System.out.println("item at "+i + " is "+sortedArr[i]);
+		
 	}
 
 	public static int[] sortIntArray(int[] incArr) {
@@ -79,5 +86,13 @@ public class SortArrayDescend {
 		}
 		System.out.println("Iteration count: " + swapCount);
 		return arr;
+	}
+	
+	public static int[] resizeArray(int [] numArr, int extra){
+		int temp[] = numArr;
+		numArr= new int[temp.length+extra];
+		for (int i=0;i<temp.length;i++)
+			numArr[i]=temp[i];
+		return numArr;
 	}
 }
