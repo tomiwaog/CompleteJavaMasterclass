@@ -1,4 +1,7 @@
 package Projects;
+
+import java.util.Arrays;
+
 //Using Bubble Sort Sorting Algo
 public class SortArrayDescend {
 
@@ -23,21 +26,20 @@ public class SortArrayDescend {
 		
 		//Using Second Algo with Flag
 		System.out.println("\n\n\t* Using Second Algo, Bubble Sort with Flag.\n");
-		int[] unsortedArr2= { 5, 8, 3, 1, 55, 9, 6, 11, 0, 8, -8, -23, -45, 6, 1, -1, -2, -3, -4, -5, -6 };
-		resultArr = sortIntArrayFlag(unsortedArr2);
+		resultArr = sortIntArrayFlag(unsortedArr);
 		for (int eacho : resultArr) {
 			System.out.print(eacho + " ");
 		}
 		System.out.println("");
 		
-		int[] sortedArr2 = {21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1};	
-		resultArr = sortIntArrayFlag(sortedArr2);
+		resultArr = sortIntArrayFlag(sortedArr);
 		for (int eacho : resultArr) {
 			System.out.print(eacho + " ");
 		}
 	}
 
-	public static int[] sortIntArray(int[] arr) {
+	public static int[] sortIntArray(int[] incArr) {
+		int arr[] = Arrays.copyOf(incArr,incArr.length);
 		System.out.println("Expected iteration is ["+arr.length +" - "+1 + "]: "+(arr.length - 1));
 		int temp = 0;
 		int swapCount = 0;
@@ -57,7 +59,8 @@ public class SortArrayDescend {
 		return arr;
 	}
 
-	public static int[] sortIntArrayFlag(int[] arr) {
+	public static int[] sortIntArrayFlag(int[] incArr2) {
+		int arr[] = Arrays.copyOf(incArr2,incArr2.length);
 		int temp = 0;
 		int swapCount = 0;
 		// Using bubble sort O(n^2) with Flag Counter
