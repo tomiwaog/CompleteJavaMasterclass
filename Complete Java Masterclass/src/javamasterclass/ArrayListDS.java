@@ -1,6 +1,7 @@
 package javamasterclass;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 class GroceryList {
 	private ArrayList<String> groceryList = new ArrayList<String>();
@@ -62,24 +63,73 @@ class GroceryList {
 
 public class ArrayListDS {
 
+	private static Scanner scanner = new Scanner(System.in);
+	private static GroceryList groList = new GroceryList();
+	
 	public static void main(String[] args) {
-		GroceryList hi = new GroceryList();
-		hi.addGroceryItem("Tom");
-		hi.addGroceryItem("Tim Buk");
-		hi.addGroceryItem("Ogunbamowo");
-		hi.printGroceryList();
-
-
-		hi.searchModify("Tom", "Tomiwa");
-		hi.printGroceryList();
-		//hi.removeItem(1);
-		//hi.printGroceryList();
-/*		
- 		hi.modifyItem(1, "TommieOg");
-		hi.printGroceryList();
-*/
+/*		//Instance object
+		GroceryList groList2 = new GroceryList();
+		groList2.findItem("test");*/
+		boolean quit = false;
+		int choice = scanner.nextInt();
+		scanner.nextLine();
+		while(!quit){
+			System.out.println("Enter a choice from Menu");
+			
+			switch(choice){
+			case 1:
+				printInstruction();
+				break;
+			case 2:
+			addItem();break;
+			case 3:
+				modifyItem();
+				break;
+			case 4:
+				removeItem();
+				break;
+			case 5:
+				itemSearch();
+				break;
+			case 6:
+				quit = true;
+				break;
+			}
+		}
+		
 		
 
+	}
+
+	private static void itemSearch() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void removeItem() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void modifyItem() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void addItem() {
+		System.out.println("Please enter item to add");	
+		groList.addGroceryItem(scanner.nextLine());	
+	}
+
+	private static void printInstruction() {
+		System.out.println("\nPress ");
+		System.out.println("\t 1 - To print Instruction");
+		System.out.println("\t 2 - To Add item");
+		System.out.println("\t 3 - To modify Item");
+		System.out.println("\t 4 - removeItem");
+		System.out.println("\t 5 - Search for an Item");
+		System.out.println("\t 6 - Quit / Exit");
+		System.out.println("\t ");	
 	}
 
 }
