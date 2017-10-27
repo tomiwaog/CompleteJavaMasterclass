@@ -24,40 +24,40 @@ class GroceryList {
 	public void modifyItem(int position, String newItem) {
 		if (position > 0) {
 			groceryList.set(position - 1, newItem);
-			System.out.println("Item at "+position+ " modified!");
+			System.out.println("Item at " + position + " modified!");
 		}
 	}
 
 	public void searchModify(String key, String newItem) {
 
-		if (search(key))//if (groceryList.contains(key)) //Alternative
-			{
+		if (search(key))// if (groceryList.contains(key)) //Alternative
+		{
 			int location = groceryList.indexOf(key);
 			groceryList.set(location, newItem);
-			System.out.println(key+" replaced with "+ newItem);
-		}
-		else
-			System.out.println(key+" not found!");
+			System.out.println(key + " replaced with " + newItem);
+		} else
+			System.out.println(key + " not found!");
 	}
 
 	public boolean search(String key) {
-/*		for (String x : groceryList)
-			if (x == key)
-				found = true;*/
-		
-		//Using builtin Methods
-		//int loc = groceryList.indexOf(key); //Get location
+		/*
+		 * for (String x : groceryList) if (x == key) found = true;
+		 */
+
+		// Using builtin Methods
+		// int loc = groceryList.indexOf(key); //Get location
 
 		return groceryList.contains(key);
 	}
-	
-	//Task
-	public int findItem(String key){
+
+	// Task
+	public int findItem(String key) {
 		int position = groceryList.indexOf(key);
 		return position;
 	}
-	public void removeItem(int position){
-		groceryList.remove(position-1);
+
+	public void removeItem(int position) {
+		groceryList.remove(position - 1);
 	}
 }
 
@@ -65,23 +65,25 @@ public class ArrayListDS {
 
 	private static Scanner scanner = new Scanner(System.in);
 	private static GroceryList groList = new GroceryList();
-	
+
 	public static void main(String[] args) {
-/*		//Instance object
-		GroceryList groList2 = new GroceryList();
-		groList2.findItem("test");*/
+		/*
+		 * //Instance object GroceryList groList2 = new GroceryList();
+		 * groList2.findItem("test");
+		 */
 		boolean quit = false;
 		int choice = scanner.nextInt();
 		scanner.nextLine();
-		while(!quit){
+		while (!quit) {
 			System.out.println("Enter a choice from Menu");
-			
-			switch(choice){
+
+			switch (choice) {
 			case 1:
 				printInstruction();
 				break;
 			case 2:
-			addItem();break;
+				addItem();
+				break;
 			case 3:
 				modifyItem();
 				break;
@@ -96,9 +98,6 @@ public class ArrayListDS {
 				break;
 			}
 		}
-		
-		
-
 	}
 
 	private static void itemSearch() {
@@ -119,8 +118,8 @@ public class ArrayListDS {
 	}
 
 	private static void addItem() {
-		System.out.println("Please enter item to add");	
-		groList.addGroceryItem(scanner.nextLine());	
+		System.out.println("Please enter item to add");
+		groList.addGroceryItem(scanner.nextLine());
 	}
 
 	private static void printInstruction() {
@@ -131,7 +130,7 @@ public class ArrayListDS {
 		System.out.println("\t 4 - removeItem");
 		System.out.println("\t 5 - Search for an Item");
 		System.out.println("\t 6 - Quit / Exit");
-		System.out.println("\t ");	
+		System.out.println("\t ");
 	}
 
 }
