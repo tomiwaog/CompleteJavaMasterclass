@@ -102,18 +102,20 @@ public class ArrayListDS {
 	}
 
 	private static void itemSearch() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Enter item to search for");
+		groList.search(scanner.nextLine());
 	}
 
 	private static void removeItem() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Enter position of item to delete: ");
+		groList.removeItem(scanner.nextInt());
 	}
 
 	private static void modifyItem() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Enter position to update");
+		int position = scanner.nextInt();
+		System.out.println("Enter new List");
+		groList.modifyItem(position, scanner.nextLine());
 	}
 
 	private static void addItem() {
