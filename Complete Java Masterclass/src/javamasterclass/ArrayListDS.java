@@ -102,7 +102,11 @@ public class ArrayListDS {
 
 	private static void itemSearch() {
 		System.out.println("Enter item to search for");
-		groList.search(scanner.nextLine());
+                String key = scanner.nextLine();
+		if (groList.search(key)){
+                    int loc = groList.findItem(key);
+                    System.out.println(key + " was found at index "+loc);
+                }
 	}
 
 	private static void removeItem() {
