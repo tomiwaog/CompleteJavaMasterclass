@@ -121,6 +121,7 @@ public class ArrayListDS {
 			System.out.println("FOUND!");
 		else
 			System.out.println("NOT FOUND!");
+
 	}
 
 	private static void removeItem() {
