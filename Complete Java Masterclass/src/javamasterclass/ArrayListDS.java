@@ -4,26 +4,31 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class GroceryList {
-	private ArrayList<String> groceryList = new ArrayList<String>();
+	private ArrayList<String> groceryListArr = new ArrayList<String>();
 
 	public ArrayList<String> getGroceryList() {
-		return groceryList;
+		return groceryListArr;
 	}
 
-	public void addGroceryItem(String item) {
-		groceryList.add(item);
+	public void addItem(String item) {
+		groceryListArr.add(item);
 	}
 
 	public void printGroceryList() {
-		System.out.println("You have " + groceryList.size() + " elements in "
-				+ getClass().getSimpleName());
-		for (int i = 0; i < groceryList.size(); i++)
-			System.out.println((i + 1) + ". " + groceryList.get(i));
+		System.out.println("You have " + groceryListArr.size()
+				+ " elements in " + getClass().getSimpleName());
+		for (int i = 0; i < groceryListArr.size(); i++)
+			System.out.println((i + 1) + ". " + groceryListArr.get(i));
+	}
+
+	public void getItem(int pos) {
+		if (groceryListArr.size() >= pos)
+			System.out.println(groceryListArr.get(pos - 1));
 	}
 
 	public void modifyItem(int position, String newItem) {
-		if (position > 0) {
-			groceryList.set(position - 1, newItem);
+		if (position >= 0) {
+			groceryListArr.set(position, newItem);
 			System.out.println("Item at " + position + " modified!");
 		}
 	}
@@ -32,8 +37,8 @@ class GroceryList {
 
 		if (search(key))// if (groceryList.contains(key)) //Alternative
 		{
-			int location = groceryList.indexOf(key);
-			groceryList.set(location, newItem);
+			int location = groceryListArr.indexOf(key);
+			groceryListArr.set(location, newItem);
 			System.out.println(key + " replaced with " + newItem);
 		} else
 			System.out.println(key + " not found!");
@@ -47,17 +52,21 @@ class GroceryList {
 		// Using builtin Methods
 		// int loc = groceryList.indexOf(key); //Get location
 
-		return groceryList.contains(key);
+		return groceryListArr.contains(key);
 	}
 
 	// Task
 	public int findItem(String key) {
-		int position = groceryList.indexOf(key);
+		int position = groceryListArr.indexOf(key);
 		return position;
 	}
 
 	public void removeItem(int position) {
-		groceryList.remove(position - 1);
+		groceryListArr.remove(position);
+	}
+
+	public int getSize() {
+		return groceryListArr.size();
 	}
 }
 
@@ -72,10 +81,12 @@ public class ArrayListDS {
 		 * groList2.findItem("test");
 		 */
 		boolean quit = false;
-		int choice = scanner.nextInt();
-		scanner.nextLine();
+
 		while (!quit) {
+			printInstruction();
 			System.out.println("Enter a choice from Menu");
+			int choice = scanner.nextInt();
+			scanner.nextLine();
 
 			switch (choice) {
 			case 1:
@@ -94,6 +105,9 @@ public class ArrayListDS {
 				itemSearch();
 				break;
 			case 6:
+				groList.printGroceryList();
+				break;
+			case 7:
 				quit = true;
 				break;
 			}
@@ -101,25 +115,45 @@ public class ArrayListDS {
 	}
 
 	private static void itemSearch() {
-		System.out.println("Enter item to search for");
-		groList.search(scanner.nextLine());
+		System.out.println("Enter the Item to search for: ");
+		String key = scanner.nextLine();
+		if (groList.search(key))
+			System.out.println("FOUND!");
+		else
+			System.out.println("NOT FOUND!");
 	}
 
 	private static void removeItem() {
-		System.out.println("Enter position of item to delete: ");
-		groList.removeItem(scanner.nextInt());
+		System.out.println("Enter the position to remove");
+		int position = scanner.nextInt();
+		scanner.nextLine();	
+		if (position > 0 && position <= groList.getSize()) {
+			groList.removeItem(position-1);
+		}
+		else{
+			System.out.println("Position doesn't exist");
+		}
 	}
 
 	private static void modifyItem() {
-		System.out.println("Enter position to update");
+		System.out.println("Enter the position to edit");
 		int position = scanner.nextInt();
-		System.out.println("Enter new List");
-		groList.modifyItem(position, scanner.nextLine());
+		scanner.nextLine();
+		System.out.println("Enter the new Item");
+		String newItem = scanner.nextLine();
+		if (position > 0 && position <= groList.getSize()) {
+			groList.modifyItem(position-1, newItem);
+		}
+		else{
+			System.out.println("Position doesn't exist");
+		}
 	}
 
 	private static void addItem() {
-		System.out.println("Please enter item to add");
-		groList.addGroceryItem(scanner.nextLine());
+		System.out.println("Please enter item to add: ");
+		String item = scanner.nextLine();
+		groList.addItem(item);
+
 	}
 
 	private static void printInstruction() {
@@ -129,7 +163,8 @@ public class ArrayListDS {
 		System.out.println("\t 3 - To modify Item");
 		System.out.println("\t 4 - removeItem");
 		System.out.println("\t 5 - Search for an Item");
-		System.out.println("\t 6 - Quit / Exit");
+		System.out.println("\t 6 - Print Grocery list");
+		System.out.println("\t 7 - Quit / Exit");
 		System.out.println("\t ");
 	}
 
