@@ -126,11 +126,10 @@ public class ArrayListDS {
 	private static void removeItem() {
 		System.out.println("Enter the position to remove");
 		int position = scanner.nextInt();
-		scanner.nextLine();	
+		scanner.nextLine();
 		if (position > 0 && position <= groList.getSize()) {
-			groList.removeItem(position-1);
-		}
-		else{
+			groList.removeItem(position - 1);
+		} else {
 			System.out.println("Position doesn't exist");
 		}
 	}
@@ -142,9 +141,8 @@ public class ArrayListDS {
 		System.out.println("Enter the new Item");
 		String newItem = scanner.nextLine();
 		if (position > 0 && position <= groList.getSize()) {
-			groList.modifyItem(position-1, newItem);
-		}
-		else{
+			groList.modifyItem(position - 1, newItem);
+		} else {
 			System.out.println("Position doesn't exist");
 		}
 	}
