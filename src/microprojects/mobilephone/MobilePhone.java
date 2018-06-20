@@ -74,7 +74,6 @@ public class MobilePhone {
 	public boolean addContact(Contact person) {
 		if (findContact(person) < 0) {
 			contactsList.add(person);
-			System.out.println(person.getName()+" added!");
 			return true;
 		} else {
 			System.out.println("Contact already exist");
@@ -169,7 +168,7 @@ public class MobilePhone {
 		return false;
 	}
 
-	public void displayContact(String name) {
+	public void printContact(String name) {
 		if (findContact(name) >= 0) {
 			int loc = findContact(name);
 			String result = contactsList.get(loc).getContactDetails();

@@ -16,7 +16,7 @@ public class Menu {
 		boolean exitMenu = false;
 		printMenuOptions();
 		while (!exitMenu) {
-			System.out.print("\nEnter option: ");
+			System.out.print("\nEnter option (8 for Menu): ");
 			int option = scanner.nextInt();
 			scanner.nextLine();
 			switch (option) {
@@ -74,7 +74,7 @@ public class Menu {
 		System.out.println("Enter name of Contact to query: ");
 		String contactName = scanner.nextLine();
 		if (newPhone.queryContact(contactName) != null) {
-			newPhone.displayContact(contactName);
+			newPhone.printContact(contactName);
 		} else {
 			System.out.println("SORRY!!! '" + contactName
 					+ "' was not found in your contactlist");
