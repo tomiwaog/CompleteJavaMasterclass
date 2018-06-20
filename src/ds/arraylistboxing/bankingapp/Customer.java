@@ -25,7 +25,7 @@ public class Customer {
 		this.transactions.add(Double.valueOf(transactions));  //Autoboxing
 	}
 	
-	public ArrayList<Double> getAllCustTransactions(){
+	public ArrayList<Double> getAllTransactions(){
 		return transactions;
 	}
 }

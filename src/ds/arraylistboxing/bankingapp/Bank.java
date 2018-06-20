@@ -39,41 +39,47 @@ public class Bank {
 
 	public boolean addCustomer(String branchName, String customerName,
 			double initialAmount) {
-		Branch theBranch = findBranch(branchName);
-		if (theBranch != null) {
-			return theBranch.newCustomer(customerName, initialAmount);
+		//IF branch is found, add customer to the found branch
+		Branch foundBranch = findBranch(branchName);
+		if (foundBranch != null) {
+			//Adds customer to branch returned by findBranch(x)
+			return foundBranch.newCustomer(customerName, initialAmount);
 		}
 		return false;
 	}
 
-	public boolean addCustTrans(String branchName, String custName,
+	public boolean addCustTransaction(String branchName, String custName,
 			Double transaction) {
-		Branch currBranch = findBranch(branchName);
-		if (currBranch != null) {
-			return currBranch.addCustomerTrans(custName, transaction);
+		Branch foundBranch = findBranch(branchName);
+		if (foundBranch != null) {
+			return foundBranch.addCustomerTrans(custName, transaction);
 		}
 		return false;
 	}
 
 	public boolean listCustomers(String branchName, boolean showTransaction) {
-		Branch theBranch = findBranch(branchName);
-		if (theBranch != null) {
-			System.out.println("Customer details for branch : "
-					+ theBranch.getBranchName());
-			ArrayList<Customer> branchCustomers = theBranch.getCustomersList();
+		Branch foundBranch = findBranch(branchName);
+		if (foundBranch != null) {
+			System.out.println("Customer details for branch '"
+					+ foundBranch.getBranchName()+"': ");
+			//Saves the list of Customers in foundBranch 
+			ArrayList<Customer> branchCustomers = foundBranch.getCustomersList();
 
+			//For each Customer in Branch.
 			for (int i = 0; i < branchCustomers.size(); i++) {
-				Customer branchCustomer = branchCustomers.get(i);
-				System.out.println("Customer " + (i+1) +": "+branchCustomer.getName());
+				Customer currBranchCustomer = branchCustomers.get(i);
+				System.out.println("Customer " + (i+1) +": "+currBranchCustomer.getName());
 
+				//If Show Transaction... iterate in subobject in each i (branch)
 				if (showTransaction) {
 					System.out.println("Transactions for "
-							+ branchCustomer.getName() + ": ");
-					ArrayList<Double> customerTranss = branchCustomer
-							.getAllCustTransactions();
-					for (int j = 0; j < customerTranss.size(); j++) {
+							+ currBranchCustomer.getName() + ": ");
+					//Since each customer has an array of Transactions (Double type)
+					ArrayList<Double> customerTrans = currBranchCustomer
+							.getAllTransactions();
+					for (int j = 0; j < customerTrans.size(); j++) {
 						System.out.println("["+(j + 1) + "] Amount "
-								+ customerTranss.get(j));
+								+ customerTrans.get(j).doubleValue()); //Un-boxing from Double to double
 					}
 					System.out.println("\n");
 				}

@@ -7,7 +7,7 @@ public class Main {
 
 		nationwideBank.addBranch("Uxbridge");
 		nationwideBank.addCustomer("Uxbridge", "Tomiwa Ogunbamowo", 1000.00);
-		nationwideBank.addCustomer("Uxbridge", "Hannan Quershi", 500.00);
+		nationwideBank.addCustomer("Uxbridge", "Queen Ogunbamowo", 500.00);
 		nationwideBank.addCustomer("Uxbridge", "David Lammy", 700.00);
 		nationwideBank.addCustomer("Uxbridge", "Tony Robins", 750.00);
 
@@ -15,8 +15,8 @@ public class Main {
 		nationwideBank.addCustomer("Nationwide West Drayton", "Malcom Little", 550.55);
 		nationwideBank.addCustomer("Nationwide West Drayton", "Marcus Garvey", 350.44);
 	
-		nationwideBank.addCustTrans("Uxbridge", "Tomiwa Ogunbamowo", 55.00);
-		nationwideBank.addCustTrans("Uxbridge", "Tomiwa Ogunbamowo", 545.00);
+		nationwideBank.addCustTransaction("Uxbridge", "Tomiwa Ogunbamowo", 55.00);
+		nationwideBank.addCustTransaction("Uxbridge", "Tomiwa Ogunbamowo", 545.00);
 
 		System.out.println("\n");
 		nationwideBank.listCustomers("Uxbridge", true);
@@ -39,16 +39,16 @@ public class Main {
 		}
 		
 		//Test Transaction add - invalid Customer name in Selected Branch
-		if (!nationwideBank.addCustTrans("Hayes", "Tomiwa Ogunbamowo", 1900.03)){
+		if (!nationwideBank.addCustTransaction("Hayes", "Tomiwa Ogunbamowo", 1900.03)){
 			System.out.println("Customer does not exist at Branch");
 		}
 		
 		//Test adding duplicate customer to existing branch
-		if (nationwideBank.addCustomer("Uxbridge", "Tomiwah Ogunbamowo", 555.55)){
+		if (nationwideBank.addCustomer("Uxbridge", "Tomiwa Ogunbamowo", 555.55)){
 			System.out.println("New Customer added");
 		}
 		else
-			System.out.println("Already exist in that Branch");
+			System.out.println("Customer already exist in that Branch");
 	}
 
 }
