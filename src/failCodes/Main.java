@@ -1,6 +1,6 @@
 package failCodes;
-import microprojects.bankingapp.Customer;
 import codingexercises.BarkingDog;
+import ds.arraylistboxing.bankingapp.Customer;
 
 public class Main {
 	public static void main(String[] args) {
