@@ -56,7 +56,7 @@ public class MobilePhone {
 		}
 	}
 
-	public void viewContactList() {
+	public void printContacts() {
 		if (contactsList.size()<=0){
 			System.out.println("Sorry! Your contact list is Empty.");
 		}else
@@ -110,7 +110,7 @@ public class MobilePhone {
 //	}
 
 
-	//Extra Method - Query Contact for Search function
+	//Query Contact for Search function
 	public String queryContact(Contact contact){
 		if (findContact(contact)>=0){
 			return contact.getName();

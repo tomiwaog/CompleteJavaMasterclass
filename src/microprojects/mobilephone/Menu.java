@@ -33,7 +33,7 @@ public class Menu {
 				searchContact();
 				break;
 			case 5:
-				newPhone.viewContactList();
+				newPhone.printContacts();
 				break;
 			case 6:
 				shutDown();
@@ -121,5 +121,7 @@ public class Menu {
 		Contact newPerson = Contact.createContact(newPersonName, newPersonNum);
 		if (newPhone.addContact(newPerson))
 			System.out.println(newPersonName + " has been added!");
+		else
+			System.out.println("Cannot add +" + newPersonName + " to lisr");
 	}
 }
