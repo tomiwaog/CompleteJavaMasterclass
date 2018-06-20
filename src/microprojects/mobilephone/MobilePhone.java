@@ -74,8 +74,10 @@ public class MobilePhone {
 	public boolean addContact(Contact person) {
 		if (findContact(person) < 0) {
 			contactsList.add(person);
+			System.out.println(person.getName()+" added!");
 			return true;
 		} else {
+			System.out.println("Contact already exist");
 			return false;
 		}
 	}
@@ -84,22 +86,31 @@ public class MobilePhone {
 	private int findContact(Contact contact) {
 		return contactsList.indexOf(contact);
 	}
-
+	
 	// Find contact on file
-	private int findContactName(String contactName) {
-		Contact contact;
-		int location = -1;
-		for (int i = 0; i < contactsList.size(); i++) {
-			contact = contactsList.get(i);
-			if (contact.getName().equals(contactName)) {
-				location = i;
-				return location;
+	private int findContact(String contactName) {
+		for (Contact x: contactsList) {
+			if (x.getName().equals(contactName)) {
+				return findContact(x);
 			}
 		}
-		return location;
+		return -1;
 	}
+	
+	//Alternative code to the method findContact(String)
+//	private int findContact(String contactName) {
+//		for (int i = 0; i < contactsList.size(); i++) {
+//			Contact contact = contactsList.get(i);
+//			if (contact.getName().equals(contactName)) {
+//				int location = i;
+//				return location;
+//			}
+//		}
+//		return -1;
+//	}
 
-	//Query Contact
+
+	//Extra Method - Query Contact for Search function
 	public String queryContact(Contact contact){
 		if (findContact(contact)>=0){
 			return contact.getName();
@@ -109,12 +120,13 @@ public class MobilePhone {
 	
 	//Query Contact
 	public Contact queryContact(String contactName){
-		int position = findContactName(contactName);
+		int position = findContact(contactName);
 		if (position >=0){
 			return contactsList.get(position);
 		}
 		return null;
 	}
+	
 	// Removes Contact if found!
 	public boolean removeContact(Contact keyContact) {
 		// stores the location of the COntact whose name is name
@@ -127,22 +139,26 @@ public class MobilePhone {
 	}
 
 	// Update or replace Contact Object
-	public void updateContact(Contact oldContact, Contact newContact) {
-		int contactIndex = findContact(oldContact);
-		if (findContactName(newContact.getName()) !=-1){
+	public boolean updateContact(Contact oldContact, Contact newContact) {
+		int oldContactIndex = findContact(oldContact);
+		if (findContact(newContact.getName()) !=-1){
 			System.out.println("New Contact already Exist. Update not successful");
+			return false;
 		}
-		else if (contactIndex >= 0) {
-			this.contactsList.set(contactIndex, newContact);
+		else if (oldContactIndex >= 0) { //If old Count is found
+			this.contactsList.set(oldContactIndex, newContact);
 			System.out.println(oldContact.getName()+ " was successfully replaced by "+ newContact.getName());
+			return true;
 		}
-		else
-			System.out.println("Cannot find Contact");
+		else{
+			System.out.println("Cannot replace your contact as He or She doesn't exist");
+			return false;
+		}
 	}
 
 	// Modify Contact if found
 	public boolean modifyContactName(String currContact, String newContact) {
-		int position = findContactName(currContact);
+		int position = findContact(currContact);
 		if (position >= 0) {
 			contactsList.get(position).setName(newContact);
 			System.out
@@ -154,8 +170,8 @@ public class MobilePhone {
 	}
 
 	public void displayContact(String name) {
-		if (findContactName(name) >= 0) {
-			int loc = findContactName(name);
+		if (findContact(name) >= 0) {
+			int loc = findContact(name);
 			String result = contactsList.get(loc).getContactDetails();
 			System.out.println(result);
 		}

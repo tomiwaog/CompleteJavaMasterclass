@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Menu {
 	private static Scanner scanner = new Scanner(System.in);
 
-	private static Sim o2 = new Sim("o2", "+447795550420", "Nano");
+	private static Sim o2 = new Sim("o2", "+44747004280", "Nano");
 	private static MobilePhone newPhone = new MobilePhone("Sony Z1", o2);
 
 	public static void main(String[] args) {
@@ -19,7 +19,6 @@ public class Menu {
 			System.out.print("\nEnter option: ");
 			int option = scanner.nextInt();
 			scanner.nextLine();
-
 			switch (option) {
 			case 1:
 				addContact();
@@ -48,7 +47,9 @@ public class Menu {
 				break;
 			default:
 				System.out.println("End");
+				break;
 			}
+
 			if (option != 8)
 				System.out.print("\n\nEnter 8 to Print Menu Option");
 		}
@@ -120,6 +121,5 @@ public class Menu {
 		Contact newPerson = Contact.createContact(newPersonName, newPersonNum);
 		if (newPhone.addContact(newPerson))
 			System.out.println(newPersonName + " has been added!");
-
 	}
 }
