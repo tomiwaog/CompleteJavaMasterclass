@@ -62,7 +62,9 @@ public class LinkedListDemo {
 	}
 
 	@SuppressWarnings("resource")
-	private static void visit(LinkedList<String> cities ) {//type not necessary in param LL cities permitted
+	private static void visit(LinkedList<String> cities) {// type not necessary
+															// in param LL
+															// cities permitted
 		Scanner scanner = new Scanner(System.in);
 		boolean quit = false;
 		boolean goingForward = true;
@@ -89,12 +91,12 @@ public class LinkedListDemo {
 					if (listIterator.hasNext())
 						listIterator.next();
 				}
-				goingForward=true;
+				goingForward = true;
 				if (listIterator.hasNext()) {
 					System.out.println("Now visiting " + listIterator.next());
 				} else
 					System.out.println("Reached end of list");
-				goingForward=false;
+				goingForward = false;
 				break;
 			case 2:
 				if (goingForward) {
@@ -106,7 +108,7 @@ public class LinkedListDemo {
 							+ listIterator.previous());
 				} else {
 					System.out.println("Reached the start on the list");
-					goingForward=true;
+					goingForward = true;
 				}
 				break;
 			case 3:
