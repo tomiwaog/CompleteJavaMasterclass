@@ -30,8 +30,8 @@ public class Main {
 
 		List<Song> playList = new ArrayList<Song>();
 		//Adding Item from the Album[0] to Playlist
+		//Addition to playlist is valid as long as song is from the right album
 		albumList.get(0).addToPlayList("Invisible", playList);
-		albumList.get(0).addToPlayList("King Kunta", playList);
 		albumList.get(0).addToPlayList("King Kunta", playList);
 		albumList.get(0).addToPlayList("The Blacker the Berry", playList);
 		albumList.get(0).addToPlayList("Beware of Goose", playList);
