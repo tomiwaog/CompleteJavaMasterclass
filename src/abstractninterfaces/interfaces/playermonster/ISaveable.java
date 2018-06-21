@@ -4,7 +4,7 @@ package abstractninterfaces.interfaces.playermonster;
 import java.util.List;
 
 public interface ISaveable {
-
+	//Classes who implements ISaveable must provide implementation for below methods
 	List<String> write();
 	void readValues(List<String> savedValues);
 }
