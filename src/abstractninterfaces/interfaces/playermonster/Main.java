@@ -6,20 +6,22 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		//Player tom = new Player("Tom", 10, 15);
-/*		System.out.println(tom.toString());
-		saveObject(tom);
-		
-		tom.setHitPoints(8);
-		System.out.println(tom);
-		tom.setWeapon("Words");
-		saveObject(tom);
-		loadObject(tom);
-		System.out.println(tom);*/
-		
+		// Player tom = new Player("Tom", 10, 15);
+		/*
+		 * System.out.println(tom.toString()); saveObject(tom);
+		 * 
+		 * tom.setHitPoints(8); System.out.println(tom); tom.setWeapon("Words");
+		 * saveObject(tom); loadObject(tom); System.out.println(tom);
+		 */
+
 		ISaveable tom = new Monsters("Tom", 20, 40);
 		System.out.println(tom);
-		System.out.println("Strengths: "+((Monsters)tom).getStrengths());//Casting interface to enable Class methods
+		System.out.println("Strengths: " + ((Monsters) tom).getStrengths());// Casting
+																			// interface
+																			// to
+																			// enable
+																			// Class
+																			// methods
 		saveObject(tom);
 
 	}
@@ -59,11 +61,16 @@ public class Main {
 					+ " to storage device");
 		}
 	}
-	
-	public static void loadObject(ISaveable objectToLoad){
-		//Reads content from read LinkedList and loads it unto object
-		ArrayList<String> values = readValues();
-		objectToLoad.readValues(values); //Object now has the properties
-		
+
+	public static void loadObject(ISaveable objectToLoad) {
+		// ObjectToLoads will be an instance of any class that implemented
+		// ISaveable.
+		// Hence able to return its values using readValues();
+		// Reads content from read LinkedList and loads it unto object
+		ArrayList<String> values = readValues();// write a new data, returns
+												// array
+		objectToLoad.readValues(values); // returned array is reloaded by
+											// readValues()
+
 	}
 }

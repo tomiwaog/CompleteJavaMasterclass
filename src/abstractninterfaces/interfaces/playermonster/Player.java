@@ -62,7 +62,6 @@ public class Player implements ISaveable {
 	 * Method creates a new List,
 	 * Adds object's states to the list
 	 */
-	@Override
 	public List<String> write() {
 		List<String> values = new ArrayList<String>();
 		//Saves object's states to the list
@@ -76,7 +75,6 @@ public class Player implements ISaveable {
 	/**
 	 * Method reads value from an input (list type) and assigns them to state of object calling it. i.e loads the data
 	 */
-	@Override
 	public void readValues(List<String> savedValues) {
 		//Checks for list instantiation && emptiness
 		if (savedValues != null && savedValues.size()>0){

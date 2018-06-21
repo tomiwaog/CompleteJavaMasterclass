@@ -27,7 +27,6 @@ public class Monsters implements ISaveable{
 		return strengths;
 	}
 
-	@Override
 	public List<String> write() {
 		//Saves current object's states and write the to the new list
 		ArrayList<String> values = new ArrayList<String>();	
@@ -38,7 +37,6 @@ public class Monsters implements ISaveable{
 		return values;
 	}
 
-	@Override
 	public void readValues(List<String> savedValues) {
 		//Reads indexes from a List
 		//If list is instantiated and not empty
