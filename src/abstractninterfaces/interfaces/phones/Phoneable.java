@@ -1,6 +1,6 @@
 package abstractninterfaces.interfaces.phones;
 
-public interface ITelephone {
+public interface Phoneable {
 	public void powerOn();
 	void dial(int phoneNumber);
 	void answer();
