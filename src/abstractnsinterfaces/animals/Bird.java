@@ -1,4 +1,4 @@
-package classesinterface.animals;
+package abstractnsinterfaces.animals;
 
 public abstract class Bird extends Animal implements CanFly {
 	public Bird(String name) {

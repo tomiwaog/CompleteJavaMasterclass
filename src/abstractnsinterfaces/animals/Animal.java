@@ -1,4 +1,4 @@
-package classesinterface.animals;
+package abstractnsinterfaces.animals;
 
 public abstract class Animal {
 	//Abstract Classes can have member variables which can be inherited,

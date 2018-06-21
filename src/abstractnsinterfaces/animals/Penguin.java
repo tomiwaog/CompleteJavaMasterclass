@@ -1,4 +1,4 @@
-package classesinterface.animals;
+package abstractnsinterfaces.animals;
 
 public class Penguin extends Bird {
 

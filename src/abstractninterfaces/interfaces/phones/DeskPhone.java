@@ -1,4 +1,4 @@
-package classesinterface.interfaces.phones;
+package abstractninterfaces.interfaces.phones;
 
 public class DeskPhone implements ITelephone {
 private int myNumber;

@@ -1,4 +1,4 @@
-package classesinterface.interfaces.phones;
+package abstractninterfaces.interfaces.phones;
 
 public interface ITelephone {
 	public void powerOn();

@@ -1,4 +1,4 @@
-package abstractChallenge;
+package abstractninterfaces.challenge;
 
 public class SearchTree implements NodeList{
 	@Override

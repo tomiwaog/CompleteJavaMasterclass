@@ -1,4 +1,4 @@
-package abstractChallenge;
+package abstractninterfaces.challenge;
 
 public class Main {
 
