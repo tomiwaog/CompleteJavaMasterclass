@@ -15,10 +15,9 @@ public class GearBoxTest {
 								// function call. WheelSpin reset to zero
 		System.out.println(mcLaren.wheelSpeed(3000));
 		mcLaren.operateClutch(true);
+		// Also expected to fail while Clutch is still on
 		mcLaren.changeGear(3);
-		System.out.println(mcLaren.wheelSpeed(6000)); // Also expected to fail
-														// while Clutch is still
-														// on
+		System.out.println(mcLaren.wheelSpeed(6000)); 
 		mcLaren.changeGear(3);
 		mcLaren.operateClutch(false);
 		System.out.println(mcLaren.wheelSpeed(6000)); // Pass
