@@ -1,0 +1,6 @@
+4 Types of Nested classes
+
+*Static nested classes (associates a class with his outer class)
+Like Gear inside GearBox in Demo
+Non-static nested classes (inner class local class)
+Anonymous class
