@@ -93,6 +93,7 @@ public class Demo {
 				quit = true;
 				break;
 			case 1:
+				//Goes to the next item
 				if (!goingForward){
 					if (i.hasNext()){
 						i.next();
