@@ -1,4 +1,4 @@
-package abstractninterfaces.challenge;
+package classesninterfaces.challenge;
 
 public interface NodeList {
 	ListItem getRoot(); // Head of list

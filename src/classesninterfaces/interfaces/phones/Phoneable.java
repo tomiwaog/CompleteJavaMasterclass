@@ -1,4 +1,4 @@
-package abstractninterfaces.interfaces.phones;
+package classesninterfaces.interfaces.phones;
 
 public interface Phoneable {
 	public void powerOn();

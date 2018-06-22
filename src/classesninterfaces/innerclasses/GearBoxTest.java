@@ -1,11 +1,11 @@
-package nestedClasses;
+package classesninterfaces.innerclasses;
 
 public class GearBoxTest {
 
 	public static void main(String[] args) {
 		GearBox mcLaren = new GearBox(6);
-		// can create new Gear object if Gear class was public as bellow
-		// GearBox.gear first= mcLaren.new(1,20.3);
+		//Possible to create new Gear object if Gear class was public as below
+		 //GearBox.Gear first= mcLaren.new Gear(1, 12.3); //Declaring inner class
 		// TGEar change Scenario: Clutch down->Change Gear-> clutch up
 		mcLaren.operateClutch(true);
 		mcLaren.changeGear(1);

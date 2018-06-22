@@ -1,4 +1,4 @@
-package abstractninterfaces.challenge;
+package classesninterfaces.challenge;
 
 public class Node extends ListItem {
 	public Node(Object value) {

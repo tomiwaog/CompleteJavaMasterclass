@@ -1,4 +1,4 @@
-package abstractninterfaces.challenge;
+package classesninterfaces.challenge;
 
 public class MyLinkedList implements NodeList {
 	private ListItem root = null;

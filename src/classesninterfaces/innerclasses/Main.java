@@ -1,4 +1,4 @@
-package nestedClasses;
+package classesninterfaces.innerclasses;
 
 import java.util.Scanner;
 

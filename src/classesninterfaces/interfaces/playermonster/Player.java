@@ -1,4 +1,4 @@
-package abstractninterfaces.interfaces.playermonster;
+package classesninterfaces.interfaces.playermonster;
 
 import java.util.ArrayList;
 import java.util.List;

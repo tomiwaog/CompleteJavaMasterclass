@@ -1,4 +1,4 @@
-package nestedClasses;
+package classesninterfaces.innerclasses;
 
 public class Button {
 	private String title;

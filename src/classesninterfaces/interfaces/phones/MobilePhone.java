@@ -1,4 +1,4 @@
-package abstractninterfaces.interfaces.phones;
+package classesninterfaces.interfaces.phones;
 
 public class MobilePhone implements Phoneable {
 
