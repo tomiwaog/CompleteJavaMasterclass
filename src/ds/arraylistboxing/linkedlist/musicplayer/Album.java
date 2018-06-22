@@ -2,11 +2,16 @@ package ds.arraylistboxing.linkedlist.musicplayer;
 
 import java.util.LinkedList;
 import java.util.List;
-
+/**
+ * 
+ * @author Tomiwa Ogunbamowo
+ *@version 2.0
+ */
 public class Album {
 	private String albumName;
 	private String artist;
-	private SongList songs; //linkedlist
+	private SongList songs;
+	
 
 	public Album(String albumName, String artist) {
 		super();
@@ -58,7 +63,7 @@ public class Album {
 		}
 	}
 
-	class SongList {
+	private class SongList {
 		// Inner Class
 		private LinkedList<Song> songsList;
 
@@ -86,7 +91,7 @@ public class Album {
 
 		public Song findSong(int songIndex) {
 			int index = songIndex - 1;
-			if (index >= 0 && index < songsList.size()) {
+			if (index > 0 && index < songsList.size()) {
 				return songsList.get(index);
 			}
 			return null;

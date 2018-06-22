@@ -29,16 +29,16 @@ public class Main {
 		albumList.add(machinology);
 
 		List<Song> playList = new ArrayList<Song>();
-		//Adding Item from the Album[0] to Playlist
-		//Addition to playlist is valid as long as song is from the right album
+		// Adding Item from the Album[0] to Playlist
+		// Addition to playlist is valid as long as song is from the right album
 		albumList.get(0).addToPlayList("Invisible", playList);
 		albumList.get(0).addToPlayList("King Kunta", playList);
 		albumList.get(0).addToPlayList("The Blacker the Berry", playList);
 		albumList.get(0).addToPlayList("Beware of Goose", playList);
 		albumList.get(0).addToPlayList(5, playList);
-		
-		//Adding songs from album machinology to playlist
-		//Using track number instead of songTitle
+
+		// Adding songs from album machinology to playlist
+		// Using track number instead of songTitle
 		albumList.get(1).addToPlayList(3, playList);
 		albumList.get(1).addToPlayList(1, playList);
 
@@ -47,8 +47,7 @@ public class Main {
 
 	public static void playMusicPlayList(List<Song> musicPlayList) {
 		ListIterator<Song> i = musicPlayList.listIterator();
-		System.out
-				.println("\nNow Playing... " + i.next().toString());
+		System.out.println("\nNow Playing... " + i.next().toString());
 		boolean quit = false;
 		boolean goingForward = true;
 		@SuppressWarnings("resource")
@@ -59,46 +58,51 @@ public class Main {
 			switch (userOption) {
 			case 0:
 				// Replay Current song
-				if (goingForward) {
-					System.out.println("Now Playing... "
-							+ i.previous().toString());
-					goingForward = false;
-				} else {
-					System.out.println("Now Playing... "
-							+ i.next().toString());
-					goingForward = true;
+				if (!goingForward) {
+					if (i.hasNext()){
+						i.next();
+					}
+					goingForward=true;
 				}
+				if (i.hasPrevious()){
+					System.out.println("Now Playing... " + i.previous().toString());
+					goingForward = false;
+				}else{
+				System.out.println("Now Playing... " + i.next().toString());
+				goingForward = true;}
+
+
 				break;
 			case 1:
-				// Go to Previous song
+				// Go to Previous song (Works)
 				if (goingForward) {
-					i.previous();
+					if (i.hasPrevious()) {
+						i.previous();
+					}
 					goingForward = false;
 				}
-				if (i.hasPrevious()) {
-					System.out.println("Now Playing... "
-							+ i.previous().toString());
-					goingForward = false;
-				} else {
+				if (i.hasPrevious()){
+					System.out.println("Now Playing... " + i.previous().toString());
+				}else{
 					System.out.println("Reached the start of the Playlist");
-					System.out.println("Now Playing... "
-							+ i.next().toString());
-					goingForward = true;
-
+					System.out.println("Now Playing... " + i.next().toString());
+					goingForward=true;
 				}
 				break;
 			case 2:
-				// Next song
+				// Go to Next song (works)
 				if (!goingForward) {
+					if(i.hasNext()){
 					i.next();
+					}
+					goingForward=true;
 				}
 				if (i.hasNext()) {
-					System.out.println("Now playing... "
-							+ i.next().toString());
-					goingForward = true;
+					System.out.println("Now playing... " + i.next().toString());
 				} else {
 					System.out.println("Reached the end of the list");
-					goingForward = true;
+					System.out.println("Now playing... " + i.previous().toString());
+					goingForward = false;
 				}
 				break;
 			case 3:
@@ -106,16 +110,16 @@ public class Main {
 				if (musicPlayList.size() > 0) {
 					if (i.hasNext()) {
 						i.previous();
-						System.out
-								.println("Now playing " + i.next());
-						
+						System.out.println("Now playing " + i.next());
+
 					} else if (i.hasPrevious()) {
-						System.out.println("Now playing "
-								+ i.previous());
+						System.out.println("Now playing " + i.previous());
 					}
+					i.remove();
 					System.out.println("song removed from the playlist.");
+				} else {
+					System.out.println("Empty!");
 				}
-				System.out.println("Empty!");
 				break;
 			case 4:
 				// View Play list
