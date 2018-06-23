@@ -1,4 +1,4 @@
-package abstractnsinterfaces.animals;
+package classesninterfaces.innerclasses.abstracts;
 
 public abstract class Animal {
 	//Abstract Classes can have member variables which can be inherited,
@@ -10,11 +10,11 @@ public abstract class Animal {
 	private String name;
 
 	public Animal(String name) {
-		super();
 		this.name = name;
 	}
 	
-	public abstract void eat();
+	//Classes extending Animal must implements the abstract methods
+	public abstract void eat(); 
 	public abstract void breathe();
 
 	public String getName() {

@@ -1,4 +1,4 @@
-package abstractnsinterfaces.animals;
+package classesninterfaces.innerclasses.abstracts;
 
 public class Main {
 
@@ -6,13 +6,14 @@ public class Main {
 		Dog dog = new Dog("Doggie");
 		dog.breathe();
 		dog.eat();
-		
+
+		System.out.println("---------------------------");
 		//Bird parrot = new Bird("Parrot"); //Cannot instantiate abstract class
-		Parrot parrot = new Parrot("Yahoo");
+		Bird parrot = new Parrot("Yahoo");
 		parrot.breathe();
 		parrot.eat();
 		parrot.fly();
-		
+		System.out.println("---------------------------");
 		Bird pengo = new Penguin("Xixi");
 		pengo.fly();
 	}

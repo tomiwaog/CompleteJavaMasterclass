@@ -1,0 +1,8 @@
+OuterClasses
+InnerClasses : Local classes and Anonymous class(Classes without names)
+Static nested classes (associates a class with his outer class)
+Non-static nested classes (inner class local class)
+
+Abtraction:
+Interfaces : Contracts with the classes implementing them, It's partial abstraction
+
