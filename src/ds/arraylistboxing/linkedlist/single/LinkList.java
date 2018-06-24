@@ -94,6 +94,9 @@ public class LinkList {
 		return true;
 	}
 
+	public boolean removeItem(Link link){
+		return true;
+	}
 	void traverse(Link link) {
 		link = this.head;
 		while (link != null) {
