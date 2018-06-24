@@ -17,8 +17,14 @@ public class Main {
 		System.out.println("---------------------");
 		list.addLinkInOrder(new Link("7"));
 
-
-//		list.addLinkInOrder(new Link("5"));
+		list.addLinkInOrder(new Link("5"));
+		list.traverse(num);
+		System.out.println("---------------------");
+		list.removeFirst();
+		System.out.println("Just removed first");
+		list.traverse(num);
+		System.out.println("---------------------");System.out.println("Removed last");
+		list.removeLast();
 		list.traverse(num);
 	}
 

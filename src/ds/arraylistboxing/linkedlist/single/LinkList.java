@@ -51,6 +51,7 @@ public class LinkList {
 				} else {
 					// If next is null. insert right there.
 					currentLink.setNext(incomingLink);
+					incomingLink.next = null;
 					return true;
 				}
 
@@ -69,6 +70,28 @@ public class LinkList {
 			currentLink = currentLink.next;
 		}
 		return false;
+	}
+
+	public boolean removeFirst() {
+		if (this.head.next != null) {
+			this.head = this.head.next;
+			return true;
+		}
+		this.head = null;
+		return true;
+	}
+
+	public boolean removeLast() {
+		Link last = this.head;
+		while (last != null) {
+			if (last.next.next == null) {
+				System.out.println("Never run");
+				last.next = null;
+				break;
+			}
+			last = last.next;
+		}
+		return true;
 	}
 
 	void traverse(Link link) {
