@@ -20,7 +20,7 @@ public abstract class ListItem {
 
 	public abstract ListItem getNext();
 	public abstract ListItem getPrevious();
-	public abstract void setNext(ListItem item);
-	public abstract void setPrevious(ListItem item);
+	public abstract ListItem setNext(ListItem item);
+	public abstract ListItem setPrevious(ListItem item);
 	public abstract int compareTo(ListItem listItem);
 }

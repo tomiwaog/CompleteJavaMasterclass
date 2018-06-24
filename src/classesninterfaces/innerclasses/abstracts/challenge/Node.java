@@ -1,6 +1,6 @@
 package classesninterfaces.innerclasses.abstracts.challenge;
 
-public class Node extends ListItem{
+public class Node extends ListItem {
 
 	public Node(Object value) {
 		super(value);
@@ -8,32 +8,32 @@ public class Node extends ListItem{
 
 	@Override
 	public ListItem getNext() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.next;
 	}
 
 	@Override
 	public ListItem getPrevious() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.previous;
 	}
 
 	@Override
-	public void setNext(ListItem item) {
-		// TODO Auto-generated method stub
-		
+	public ListItem setNext(ListItem item) {
+		this.next = item;
+		return this.next;
 	}
 
 	@Override
-	public void setPrevious(ListItem item) {
-		// TODO Auto-generated method stub
-		
+	public ListItem setPrevious(ListItem item) {
+		this.previous = item;
+		return this.previous;
 	}
 
 	@Override
 	public int compareTo(ListItem listItem) {
-		// TODO Auto-generated method stub
-		return 0;
+		if (listItem!=null){
+			return ((String)this.getValue()).compareTo(listItem.getValue().toString());
+		}
+		return -1;
 	}
 
 }

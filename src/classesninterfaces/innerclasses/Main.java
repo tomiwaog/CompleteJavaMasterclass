@@ -12,7 +12,7 @@ public class Main {
 //		Button b = new Button("Button B");
 //		Tom x = new Tom();
 //		b.setOnClickListener(x);
-//		b.onClick();
+//		b.onClick();]
 //	
 		
 		// Local Class
