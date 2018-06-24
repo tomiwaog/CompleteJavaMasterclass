@@ -1,11 +1,16 @@
 package classesninterfaces.innerclasses.abstracts.challenge;
 
-public class SearchTree implements NodeList{
+public class SearchTree implements NodeList {
+	private ListItem root=null;
+
+	
+	public SearchTree(ListItem object) {
+		this.root = object;
+	}
 
 	@Override
 	public ListItem getRoot() {
-		// TODO Auto-generated method stub
-		return null;
+		return root;
 	}
 
 	@Override
@@ -23,7 +28,7 @@ public class SearchTree implements NodeList{
 	@Override
 	public void traverse(ListItem root) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
