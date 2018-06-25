@@ -23,7 +23,7 @@ public class Main {
 		list.removeItem(new Node("7"));
 		list.removeItem(new Node("7"));
 		list.removeItem(new Node("3"));
-		list.removeItem(new Node("5"));
+		//list.removeItem(new Node("5"));
 		list.removeItem(new Node("6"));
 		list.removeItem(new Node("4"));
 
