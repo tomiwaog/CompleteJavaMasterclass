@@ -16,7 +16,7 @@ public class Main {
 
 		System.out.println("-------------------------------------------------------");
 		list.removeItem(new Node("0"));
-		list.removeItem(new Node("9"));
+		list.removeItem(new Node("9")); 
 		list.removeItem(new Node("1"));
 		list.removeItem(new Node("8"));
 		list.removeItem(new Node("2"));
