@@ -5,6 +5,5 @@ public interface NodeList {
 	
 	boolean addItem(ListItem listItem);
 	boolean removeItem(ListItem listItem);
-	
 	void traverse(ListItem root);
 }
