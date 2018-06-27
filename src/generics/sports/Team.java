@@ -3,7 +3,7 @@ package generics.sports;
 import java.util.ArrayList;
 
 //Bounder type parameter added to prevent the wrong class being created
-public class Team<T extends Player> {
+public class Team<T extends Player> implements Comparable<Team<T>> {
 	String name;
 	int won;
 	int lost;
@@ -23,8 +23,10 @@ public class Team<T extends Player> {
 					+ this.name);
 			return true;
 		}
-		//Casting would be required inorder to get access to Player's methods. if T doesn't extend Player like below:
-		System.out.println("Player:"+((Player)newPlayer).getName()+ " is already exist in Team");
+		// Casting would be required inorder to get access to Player's methods.
+		// if T doesn't extend Player like below:
+		System.out.println("Player:" + ((Player) newPlayer).getName()
+				+ " is already exist in Team");
 		return false;
 	}
 
@@ -49,16 +51,27 @@ public class Team<T extends Player> {
 			won++;
 			message = " beat ";
 		}
-		if (opponent!=null){
-			System.out.println(this.getTeamName()+message+opponent.getTeamName());
-			//Runs the same program on opponent object. notice ourScore and their score position swap.
+		if (opponent != null) {
+			System.out.println(this.getTeamName() + message
+					+ opponent.getTeamName());
+			// Runs the same program on opponent object. notice ourScore and
+			// their score position swap.
 			opponent.matchResult(null, ourScore, theirScore);
 		}
-		
 
 	}
-	
-	public int ranking(){
-		return (won*2)+tied;
+
+	public int ranking() {
+		return (won * 2) + tied;
+	}
+
+	@Override
+	public int compareTo(Team<T> team) {
+		if (this.ranking() > team.ranking()) {
+			return 1;
+		} else if (this.ranking() < team.ranking()) {
+			return -1;
+		}
+		return 0;
 	}
 }

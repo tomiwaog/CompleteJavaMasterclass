@@ -9,7 +9,9 @@ public class Main {
 		BasketballPlayer demar = new BasketballPlayer("Demar DeRozan");
 		
 		Team<FootballPlayer> torontoRaptors = new Team<>("Toronto Raptors");
-		
+		torontoRaptors.addPlayer(musa);
+		Team<SoccerPlayer> socx = new Team<SoccerPlayer>("Team Socx");
+		socx.addPlayer(beckham);
 //		torontoRaptors.addPlayer(jackie);
 //		torontoRaptors.addPlayer(musa);
 //		torontoRaptors.addPlayer(beckham);
@@ -24,11 +26,13 @@ public class Main {
 		
 		Team<BasketballPlayer> nyNicks = new Team<>("New York Nicks");
 		Team<BasketballPlayer> chiBulls = new Team<>("Chicago Bulls");
-		System.out.println(nyNicks.getTeamName());
+
+		
 		goldenState.matchResult(nyNicks, 23, 53);
 		goldenState.matchResult(chiBulls, 80, 105);
 		goldenState.matchResult(nyNicks, 90, 90);
 		System.out.println(goldenState.ranking());
+		System.out.println("result is:"+goldenState.compareTo(chiBulls));
 		
 		//The below, would compile(with exception at run time due to our casting in Team Class), if bounder type parameters wasn't set in Team Class
 		//Team<String> broken = new Team<>("Testing broken"); 
