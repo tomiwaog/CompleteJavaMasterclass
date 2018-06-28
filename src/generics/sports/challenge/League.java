@@ -3,7 +3,7 @@ package generics.sports.challenge;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class League<T extends Team> {
+public class League<T extends Team<?>> {
 	private String name;
 
 	private ArrayList<T> league = new ArrayList<>();
@@ -29,12 +29,16 @@ public class League<T extends Team> {
 	}
 
 	public void showLeagueTable() {
+		System.out.println();
+		System.out.println(this.getName()+" LEAGUE TABLE:");
 		Collections.sort(league);
 		int counter = 1;
 		;
 		for (T team : league) {
-			System.out.println(counter + ". " + team.getTeamName()+": "+ team.ranking());
+			System.out.println(counter + ". " + team.getTeamName() + ": "
+					+ team.ranking());
 			counter++;
 		}
 	}
+
 }

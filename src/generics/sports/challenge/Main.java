@@ -1,26 +1,29 @@
 package generics.sports.challenge;
 
-
 public class Main {
 
 	public static void main(String[] args) {
-		League<BasketballTeam> nba = new League<BasketballTeam>("NBA");
-		League<FootballTeam> premierLeague = new League<FootballTeam>("Premer League");
-		League<Team <BasketballPlayer>> x;
+		League<Team<BasketballPlayer>> nba = new League<>("NBA");
+		League<Team<FootballPlayer>> premierLeague = new League<>(
+				"Premer League");
 
-		BasketballTeam raptors = new BasketballTeam("Raptors");
-		BasketballTeam celtics = new BasketballTeam("Celtics");
-		BasketballTeam heat = new BasketballTeam("Heat");
-		BasketballTeam knicks = new BasketballTeam("Knicks");
+		// Creating Basketball Team
+		Team<BasketballPlayer> raptors = new Team<>("Raptors");
+		Team<BasketballPlayer> celtics = new Team<>("Celtics");
+		Team<BasketballPlayer> heat = new Team<>("Heat");
+		Team<BasketballPlayer> knicks = new Team<>("Knicks");
 
-		FootballTeam arsenal = new FootballTeam("Arsenal");
-		FootballTeam chelsea = new FootballTeam("Chelsea");
+		// Creating Football Team
+		Team<FootballPlayer> arsenal = new Team<>("Arsenal");
+		Team<FootballPlayer> chelsea = new Team<>("Chelsea");
 
+		// Add Team to Basketball League
 		nba.addTeam(raptors);
 		nba.addTeam(celtics);
 		nba.addTeam(knicks);
 		nba.addTeam(heat);
 
+		// Add Team to Football League
 		premierLeague.addTeam(arsenal);
 		premierLeague.addTeam(chelsea);
 
@@ -32,15 +35,12 @@ public class Main {
 		knicks.matchResult(heat, 110, 90);
 		heat.matchResult(raptors, 110, 90);
 		heat.matchResult(celtics, 110, 90);
-
-		System.out.println("\nRaptors :" + raptors.ranking());
-		System.out.println("Celtics :" + celtics.ranking());
-		System.out.println("Heat :" + heat.ranking());
-		System.out.println("Knicks :" + knicks.ranking());
-		System.out.println("");
+		
+		System.out.println();
+		arsenal.matchResult(chelsea, 1, 3);
 
 		nba.showLeagueTable();
-	
-		
+		premierLeague.showLeagueTable();
+
 	}
 }
