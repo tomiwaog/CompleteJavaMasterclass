@@ -7,6 +7,7 @@ public class StaticVSInstance {
 	public static void setNumber(int number) {
 		System.out.println("Number is " + number);
 		x = number;
+		
 
 	}
 
@@ -17,6 +18,7 @@ public class StaticVSInstance {
 		// Instance method can access static methods directly
 		StaticVSInstance.setNumber(36);
 		System.out.println("Word is :" + y);
+		StaticVSInstance.randomStaticMethod(); //Instance method accessing static methods
 	}
 
 	public static void main(String[] args) {
@@ -33,4 +35,7 @@ public class StaticVSInstance {
 		// getWords(); //Static methods cannot access instance methods directly
 	}
 
+	public static void randomStaticMethod(){
+		return;
+	}
 }
