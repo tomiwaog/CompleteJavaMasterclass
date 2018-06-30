@@ -1,7 +1,9 @@
 package noteandpractice;
 
 public class Dog {
-
+	static int foodNutrient; //Can be changed but all object witness change
+	static final int OWNERS =81; //Cannot be changed, by any objects, so its static anyway
+	
 	private String name;
 	//private static String name; //Static version
 	
@@ -13,5 +15,6 @@ public class Dog {
 		System.out.println("Name = "+ name);
 	}
 }
+
 
 

@@ -3,6 +3,8 @@ package noteandpractice;
 public class StaticVSInstance {
 	static int x; // Static member/field
 	String y; // Instance member
+	int rando = randomStaticMethod(); //Instance variable accessing static method
+	int xInstance = x; //Instance variable accessing static variable
 
 	public static void setNumber(int number) {
 		System.out.println("Number is " + number);
@@ -35,7 +37,7 @@ public class StaticVSInstance {
 		// getWords(); //Static methods cannot access instance methods directly
 	}
 
-	public static void randomStaticMethod(){
-		return;
+	public static int randomStaticMethod(){
+		return 555;
 	}
 }
