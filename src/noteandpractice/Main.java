@@ -52,14 +52,16 @@ public class Main extends Object {
 		// System.out.println("\nP1 is now " + person1.getName() + " and P2 is "
 		// + person2.getName());
 		
-		//String Builder Test
+		//String Builder Mutation
 		StringBuilder x = new StringBuilder();
 		x.append("Hello\n");
 		x.append(34);
 		x.append('T');
 		x.append(5>2);
 		x.append(34.2);
-		x.append(new StringBuilder("Joe"));
+		x.append("\n");
+		x.append("ToTomiwaOg",2,"ToTomiwaOg".length()-2);
+		x.append(new StringBuilder("\nJoe"));
 		System.out.println(x);
 	}
 
