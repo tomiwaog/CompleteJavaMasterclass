@@ -26,9 +26,9 @@ public class Main extends Object {
 //		myMain.testWide(2 * x);
 //		System.out.println(Integer.MAX_VALUE == Math.pow(2, 31) - 1);
 		
-		String myStr = new String("my string");
-		String yourStr = myStr;
-		System.out.println(yourStr=="my string");
+//		String myStr = new String("my string");
+//		String yourStr = myStr;
+		//System.out.println(yourStr=="my string");
 
 		// myMain.clashMethods(3.2, 3);
 
@@ -51,6 +51,16 @@ public class Main extends Object {
 		// swap(person1, person2);
 		// System.out.println("\nP1 is now " + person1.getName() + " and P2 is "
 		// + person2.getName());
+		
+		//String Builder Test
+		StringBuilder x = new StringBuilder();
+		x.append("Hello\n");
+		x.append(34);
+		x.append('T');
+		x.append(5>2);
+		x.append(34.2);
+		x.append(new StringBuilder("Joe"));
+		System.out.println(x);
 	}
 
 	// public static void swap(Person p1, Person p2) {
