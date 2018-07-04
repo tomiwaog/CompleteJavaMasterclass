@@ -19,16 +19,16 @@ public class Main extends Object {
 		// Object doggy = new Dog("Doggy");
 		// System.out.println(((Dog)doggy).OWNERS);
 
-//		Main myMain = new Main();
-//		// Compilation error as input is vague to applicable methods
-//		// myMain.clashMethods(14, 3);
-//		int x = Integer.MAX_VALUE;
-//		myMain.testWide(2 * x);
-//		System.out.println(Integer.MAX_VALUE == Math.pow(2, 31) - 1);
-		
-//		String myStr = new String("my string");
-//		String yourStr = myStr;
-		//System.out.println(yourStr=="my string");
+		// Main myMain = new Main();
+		// // Compilation error as input is vague to applicable methods
+		// // myMain.clashMethods(14, 3);
+		// int x = Integer.MAX_VALUE;
+		// myMain.testWide(2 * x);
+		// System.out.println(Integer.MAX_VALUE == Math.pow(2, 31) - 1);
+
+		// String myStr = new String("my string");
+		// String yourStr = myStr;
+		// System.out.println(yourStr=="my string");
 
 		// myMain.clashMethods(3.2, 3);
 
@@ -51,18 +51,36 @@ public class Main extends Object {
 		// swap(person1, person2);
 		// System.out.println("\nP1 is now " + person1.getName() + " and P2 is "
 		// + person2.getName());
-		
-		//String Builder Mutation
-		StringBuilder x = new StringBuilder();
-		x.append("Hello\n");
-		x.append(34);
-		x.append('T');
-		x.append(5>2);
-		x.append(34.2);
-		x.append("\n");
-		x.append("ToTomiwaOg",2,"ToTomiwaOg".length()-2);
-		x.append(new StringBuilder("\nJoe"));
-		System.out.println(x);
+
+		// String Builder Mutation
+		// StringBuilder x = new StringBuilder();
+		// x.append("Hello\n");
+		// x.append(34);
+		// x.append('T');
+		// x.append(5>2);
+		// x.append(34.2);
+		// x.append("\n");
+		// x.append("ToTomiwaOg",2,"ToTomiwaOg".length()-2);
+		// x.append(new StringBuilder("\nJoe\n"));
+		// x.append(new Dog("DogBuilder"));
+		// System.out.println(x);
+
+		// StringBuilder sb1 = new StringBuilder("123\n");
+		// char[] name = {'J','a','v','a','l','o','v'};
+		// sb1.append(name,2,3);
+		// // sb1.insert(1, name,1,3);
+		// String tom = "Javalov";
+		// sb1.append(tom,2,3);
+		// System.out.println(sb1);
+
+		int arr[][] = new int[5][5];
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = (i+j);
+			}
+		}
+
+		System.out.println(arr[0][1]);
 	}
 
 	// public static void swap(Person p1, Person p2) {
