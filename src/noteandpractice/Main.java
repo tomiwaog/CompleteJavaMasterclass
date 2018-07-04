@@ -1,5 +1,6 @@
 package noteandpractice;
 
+
 // import static java.lang.Math.abs; 
 // Using import static to access static method of a class
 
@@ -73,14 +74,52 @@ public class Main extends Object {
 		// sb1.append(tom,2,3);
 		// System.out.println(sb1);
 
-		int arr[][] = new int[5][5];
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr[i].length; j++) {
-				arr[i][j] = (i+j);
-			}
+//		// Random implementation of a matrix table
+//		int arr[][] = new int[5][5];
+//		for (int i = 0; i < arr.length; i++) {
+//			for (int j = 0; j < arr[i].length; j++) {
+//				arr[i][j] = (i + j);
+//			}
+//		}
+
+//		//Testing null access in a multidimensional array
+//		//1 //String[][] x = { {"1"} , null, { "3", "4", "5" } };
+//		String[][] x = { {"1"} , {null}, { "3", "4", "5" } };
+//		System.out.println(x[1][0]); //Fails to run with commented code, as null wasn't wrapped as an object
+//
+//		String[]y = { "1" , null,  "3" };
+//		System.out.println(y[1]); 
+
+
+//		//Accessing Null test 
+//		Dog[] myDogArray = new Dog[3];
+//		myDogArray[0] = new Dog("Firsto");
+//		myDogArray[1] = null;
+//		myDogArray[2] = new Dog("Lasto");
+//
+//		System.out.println("DIrect access: " + myDogArray[1]);
+//
+//		for (Dog dogg : myDogArray) {
+//			if (dogg != null) {
+//				dogg.printName();
+//			} else {
+//				System.out.print("found a null one: ");
+//				System.out.println(dogg);
+//			}
+//		}
+
+		// myInt[] interfArray = new myInt[1];
+		CatInterface[] newCatArr = { new Lion(), new Tiger(),null };
+		
+		for (CatInterface i : newCatArr) {
+			System.out.println(i);
 		}
 
-		System.out.println(arr[0][1]);
+		//This declaration below also words, as all the classes extends Object Class, hence typed Object
+		Object[] newCatArrs = { new Lion(),new java.util.Date(), new Tiger(),null, new String("String heys"), new Integer[6], new Double[]{4.0,5.5}};
+		for (Object i : newCatArrs) {
+			System.out.println(i);
+		}
 	}
 
 	// public static void swap(Person p1, Person p2) {
@@ -99,30 +138,32 @@ public class Main extends Object {
 	// System.out.println(s);
 	// }
 
-	void testWide(long i) {
-		System.out.println("Widened to long");
+//	void testWide(long i) {
+//		System.out.println("Widened to long");
+//	}
+//
+//	void testWide(Long i) {
+//		System.out.println("Widened to Wrapper Long");
+//	}
+//
+//	void testWide(int i) {
+//		System.out.println("Widened to int");
+//	}
+//
+//	void testWide(Integer i) {
+//		System.out.println("Widened to Wrapper Integer");
+//	}
+//
+//	void clashMethods(double doub, int y) {
+//		System.out.println("Double is " + doub + " and Int is " + y);
+//	}
+//
+//	void clashMethods(int y, double doub) {
+//		System.out.println("Double is " + doub + " and Int is " + y);
+//	}
+}
 
-	}
-
-	void testWide(Long i) {
-		System.out.println("Widened to Wrapper Long");
-
-	}
-
-	void testWide(int i) {
-		System.out.println("Widened to int");
-	}
-
-	void testWide(Integer i) {
-		System.out.println("Widened to Wrapper Integer");
-	}
-
-	void clashMethods(double doub, int y) {
-		System.out.println("Double is " + doub + " and Int is " + y);
-	}
-
-	void clashMethods(int y, double doub) {
-		System.out.println("Double is " + doub + " and Int is " + y);
-	}
-
+class Lion implements CatInterface {}
+class Tiger implements CatInterface {}
+interface CatInterface {
 }

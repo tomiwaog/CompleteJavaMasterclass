@@ -13,6 +13,9 @@ public class Dog {
 		counter++;
 	}
 
+	static{
+		System.out.println("Expected to run once");
+	}
 	public Dog(String x, int y) {
 		System.out.println("Dog constructor with 2 param");
 	}
