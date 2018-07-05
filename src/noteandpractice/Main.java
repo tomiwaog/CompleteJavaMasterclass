@@ -7,6 +7,20 @@ public class Main extends Object {
 
 	public static void main(String[] args) {
 		
+		// switch statement analysis
+		int tom =0;
+		final int x=4;
+		switch(tom){
+			case 0:
+				System.out.println();
+			case x:
+				System.out.println("case 1");
+				break;
+			case (int)'f':
+			System.out.println("F Char allowed");
+				default:
+					System.out.println("Default");
+		}
 		// Recreating String to assigning to array
 		// ArrayList<String> arr = new ArrayList<>();
 		// arr.add("One");
@@ -158,7 +172,6 @@ public class Main extends Object {
 		// System.out.println(i);
 		// }
 	}
-
 	// public static void swap(Person p1, Person p2) {
 	// System.out.println("BEFORE SWAP\nP1 is now " + p1.getName()
 	// + " and P2 is " + p2.getName());

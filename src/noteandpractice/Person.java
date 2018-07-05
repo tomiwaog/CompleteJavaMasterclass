@@ -4,9 +4,8 @@ package noteandpractice;
  * Object Classes utilises the equals() methods to see if references point to the same object
  * String Class overrides the equals() method to compare its primitive value rather than object ref
  */
+import java.time.LocalDate;
 import java.util.ArrayList;
-
-import javax.jws.HandlerChain;
 
 public class Person {
 
@@ -38,22 +37,24 @@ public class Person {
 	}
 
 	public static void main(String[] args) {
+		LocalDate date1 =  LocalDate.of(2018,07,05);
 		
-		//Converting ArrayList of Object to Array
-		ArrayList<Object> anyList = new ArrayList<>();
-		anyList.add(2);
-		anyList.add("Name Joe");
-		anyList.add(new Person("Michael"));
-		
-		Object[] rawArr = anyList.toArray(); //Conversion
-		for (Object i: rawArr){
-			if(i instanceof Person){
-				System.out.println(((Person)i).getName());
-			}else{
-			System.out.println(i);
-			}
-		}
+//		//Converting ArrayList of Object to Array
+//		ArrayList<Object> anyList = new ArrayList<>();
+//		anyList.add(2);
+//		anyList.add("Name Joe");
+//		anyList.add(new Person("Michael"));
+//		
+//		Object[] rawArr = anyList.toArray(); //Conversion
+//		for (Object i: rawArr){
+//			if(i instanceof Person){
+//				System.out.println(((Person)i).getName());
+//			}else{
+//			System.out.println(i);
+//			}
+//		}
 
+		java.lang.Object x = new Person("");
 		
 		//Several methods on the 
 		//Return false, same will be tested with an array of class Person, and true is expected.
