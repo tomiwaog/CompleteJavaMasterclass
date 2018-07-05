@@ -1,5 +1,6 @@
 package noteandpractice;
 
+import java.util.ArrayList;
 
 // import static java.lang.Math.abs; 
 // Using import static to access static method of a class
@@ -7,6 +8,71 @@ package noteandpractice;
 public class Main extends Object {
 
 	public static void main(String[] args) {
+		Person me = new Person("Tom");
+		Person you = new Person("Tom");
+		
+		//Uses overridden version of equals in Class Person, superclass version will return false.
+		System.out.println(me.equals(you));
+		
+		//Testing removal method arrayList based on specified equals() method in Person
+		ArrayList<Person> arr = new ArrayList<>();
+		Person p1 = new Person("Jay");
+		Person p2 = new Person("John");
+		Person p3 = new Person("Phillip");
+		arr.add(p1);
+		arr.add(p2);
+		arr.add(p3);
+		
+		for(Person i: arr){
+			System.out.println(i.getName());
+		}
+		//Method below was able to remove entry as the equality method condition has changed.
+		//Object class remove methods compares currentObjectinArray.equals(incoming i.e. criteria for deletion)
+		//runs if curItem.equals("Jay"),equals method had been overridden on the curItem class
+		arr.remove(new Person("Jay"));
+		System.out.println();
+		for(Person i: arr){
+			System.out.println(i.getName());
+		}
+
+		
+		
+		
+		
+		// Recreating String to assigning to array
+		// ArrayList<String> arr = new ArrayList<>();
+		// arr.add("One");
+		// arr.add("Two");
+		// arr.add("Three");
+		//
+		// for(String i: arr){
+		// arr.set(arr.indexOf(i), i+i.length());
+		// }
+		// for (String i : arr){
+		// System.out.println(i);
+		// }
+
+		// Achieving String manipulation using StringBuilder
+		// No new object created or reassigning required like string
+//		ArrayList<StringBuilder> arrSB = new ArrayList<>();
+//		arrSB.add(new StringBuilder("One"));
+//		arrSB.add(new StringBuilder("Two"));
+//		arrSB.add(new StringBuilder("Three"));
+//
+//		for (StringBuilder j : arrSB) {
+//			j.append(j.length());
+//		}
+//		for (StringBuilder j : arrSB) {
+//			System.out.println(j);
+//		}
+		
+		//Equals method of String works differently to that of StringBuilder
+//		StringBuilder x = new StringBuilder("One");
+//		StringBuilder y = new StringBuilder("One");
+//		String i = new String("One");
+//		String j = new String("One");
+//		System.out.println(x.equals(y)); //false
+//		System.out.println(i.equals(j)); //true
 		// Dog rex = new Dog("rex");
 		// Dog fluffy = new Dog("fluffy");
 
@@ -74,52 +140,55 @@ public class Main extends Object {
 		// sb1.append(tom,2,3);
 		// System.out.println(sb1);
 
-//		// Random implementation of a matrix table
-//		int arr[][] = new int[5][5];
-//		for (int i = 0; i < arr.length; i++) {
-//			for (int j = 0; j < arr[i].length; j++) {
-//				arr[i][j] = (i + j);
-//			}
-//		}
+		// // Random implementation of a matrix table
+		// int arr[][] = new int[5][5];
+		// for (int i = 0; i < arr.length; i++) {
+		// for (int j = 0; j < arr[i].length; j++) {
+		// arr[i][j] = (i + j);
+		// }
+		// }
 
-//		//Testing null access in a multidimensional array
-//		//1 //String[][] x = { {"1"} , null, { "3", "4", "5" } };
-//		String[][] x = { {"1"} , {null}, { "3", "4", "5" } };
-//		System.out.println(x[1][0]); //Fails to run with commented code, as null wasn't wrapped as an object
-//
-//		String[]y = { "1" , null,  "3" };
-//		System.out.println(y[1]); 
+		// //Testing null access in a multidimensional array
+		// //1 //String[][] x = { {"1"} , null, { "3", "4", "5" } };
+		// String[][] x = { {"1"} , {null}, { "3", "4", "5" } };
+		// System.out.println(x[1][0]); //Fails to run with commented code, as
+		// null wasn't wrapped as an object
+		//
+		// String[]y = { "1" , null, "3" };
+		// System.out.println(y[1]);
 
-
-//		//Accessing Null test 
-//		Dog[] myDogArray = new Dog[3];
-//		myDogArray[0] = new Dog("Firsto");
-//		myDogArray[1] = null;
-//		myDogArray[2] = new Dog("Lasto");
-//
-//		System.out.println("DIrect access: " + myDogArray[1]);
-//
-//		for (Dog dogg : myDogArray) {
-//			if (dogg != null) {
-//				dogg.printName();
-//			} else {
-//				System.out.print("found a null one: ");
-//				System.out.println(dogg);
-//			}
-//		}
+		// //Accessing Null test
+		// Dog[] myDogArray = new Dog[3];
+		// myDogArray[0] = new Dog("Firsto");
+		// myDogArray[1] = null;
+		// myDogArray[2] = new Dog("Lasto");
+		//
+		// System.out.println("DIrect access: " + myDogArray[1]);
+		//
+		// for (Dog dogg : myDogArray) {
+		// if (dogg != null) {
+		// dogg.printName();
+		// } else {
+		// System.out.print("found a null one: ");
+		// System.out.println(dogg);
+		// }
+		// }
 
 		// myInt[] interfArray = new myInt[1];
-		CatInterface[] newCatArr = { new Lion(), new Tiger(),null };
-		
-		for (CatInterface i : newCatArr) {
-			System.out.println(i);
-		}
-
-		//This declaration below also words, as all the classes extends Object Class, hence typed Object
-		Object[] newCatArrs = { new Lion(),new java.util.Date(), new Tiger(),null, new String("String heys"), new Integer[6], new Double[]{4.0,5.5}};
-		for (Object i : newCatArrs) {
-			System.out.println(i);
-		}
+		// CatInterface[] newCatArr = { new Lion(), new Tiger(),null };
+		//
+		// for (CatInterface i : newCatArr) {
+		// System.out.println(i);
+		// }
+		//
+		// //This declaration below also words, as all the classes extends
+		// Object Class, hence typed Object
+		// Object[] newCatArrs = { new Lion(),new java.util.Date(), new
+		// Tiger(),null, new String("String heys"), new Integer[6], new
+		// Double[]{4.0,5.5}};
+		// for (Object i : newCatArrs) {
+		// System.out.println(i);
+		// }
 	}
 
 	// public static void swap(Person p1, Person p2) {
@@ -138,32 +207,36 @@ public class Main extends Object {
 	// System.out.println(s);
 	// }
 
-//	void testWide(long i) {
-//		System.out.println("Widened to long");
-//	}
-//
-//	void testWide(Long i) {
-//		System.out.println("Widened to Wrapper Long");
-//	}
-//
-//	void testWide(int i) {
-//		System.out.println("Widened to int");
-//	}
-//
-//	void testWide(Integer i) {
-//		System.out.println("Widened to Wrapper Integer");
-//	}
-//
-//	void clashMethods(double doub, int y) {
-//		System.out.println("Double is " + doub + " and Int is " + y);
-//	}
-//
-//	void clashMethods(int y, double doub) {
-//		System.out.println("Double is " + doub + " and Int is " + y);
-//	}
+	// void testWide(long i) {
+	// System.out.println("Widened to long");
+	// }
+	//
+	// void testWide(Long i) {
+	// System.out.println("Widened to Wrapper Long");
+	// }
+	//
+	// void testWide(int i) {
+	// System.out.println("Widened to int");
+	// }
+	//
+	// void testWide(Integer i) {
+	// System.out.println("Widened to Wrapper Integer");
+	// }
+	//
+	// void clashMethods(double doub, int y) {
+	// System.out.println("Double is " + doub + " and Int is " + y);
+	// }
+	//
+	// void clashMethods(int y, double doub) {
+	// System.out.println("Double is " + doub + " and Int is " + y);
+	// }
 }
 
-class Lion implements CatInterface {}
-class Tiger implements CatInterface {}
+class Lion implements CatInterface {
+}
+
+class Tiger implements CatInterface {
+}
+
 interface CatInterface {
 }
