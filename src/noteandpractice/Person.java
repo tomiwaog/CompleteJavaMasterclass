@@ -5,7 +5,6 @@ package noteandpractice;
  * String Class overrides the equals() method to compare its primitive value rather than object ref
  */
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class Person {
 
@@ -38,6 +37,7 @@ public class Person {
 
 	public static void main(String[] args) {
 		LocalDate date1 =  LocalDate.of(2018,07,05);
+		System.out.println(date1.getDayOfMonth());
 		
 //		//Converting ArrayList of Object to Array
 //		ArrayList<Object> anyList = new ArrayList<>();
@@ -54,7 +54,9 @@ public class Person {
 //			}
 //		}
 
-		java.lang.Object x = new Person("");
+		//Using Full class type for reference
+		java.lang.Object x = new Person("A new Human");
+		System.out.println(((Person)x).getName());
 		
 		//Several methods on the 
 		//Return false, same will be tested with an array of class Person, and true is expected.

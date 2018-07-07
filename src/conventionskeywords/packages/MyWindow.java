@@ -7,6 +7,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 
+@SuppressWarnings("serial")
 public class MyWindow extends Frame {
 
 	public MyWindow(String title) {
