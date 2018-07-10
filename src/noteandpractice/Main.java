@@ -10,7 +10,11 @@ public class Main extends Object {
 
 	public static void main(String[] args) {
 		DateTimeFormatter dtf1 = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
+		DateTimeFormatter dtf2 = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
+		DateTimeFormatter dtf3 = DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG);
 		System.out.println(dtf1.toString());
+		System.out.println(dtf2.toString());
+		System.out.println(dtf3.toString());
 		// switch statement analysis
 		int tom =0;
 		final int x=4;
