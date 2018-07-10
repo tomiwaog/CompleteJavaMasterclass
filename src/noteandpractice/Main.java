@@ -1,12 +1,16 @@
 package noteandpractice;
 
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+
 // import static java.lang.Math.abs; 
 // Using import static to access static method of a class
 
 public class Main extends Object {
 
 	public static void main(String[] args) {
-		
+		DateTimeFormatter dtf1 = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
+		System.out.println(dtf1.toString());
 		// switch statement analysis
 		int tom =0;
 		final int x=4;
