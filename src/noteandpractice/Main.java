@@ -7,14 +7,26 @@ public class Main extends Object {
 
 	public static void main(String[] args) {
 
+		// TEsting boolean assignment instead of comparison
+		// boolean x = false;
+		// if (x=true)
+		// System.out.println("x is "+ x);
+		
+		//Java choosing its own else statement without curly braces
+		int score = 110;
+		if (score > 200)
+			if (score < 400)
+				if (score > 300)
+					System.out.println(1);
+				else
+					System.out.println(2);
+		else
+				System.out.println(3);
 
-		boolean x = false;
-		if (x)
-			System.out.println("x is "+ x);
-		//Testing local variable without block
-//		if (!s.isEmpty())
-//			String lol = "lol"; //local variables are only allowed in a code block
-
+		// Testing local variable without block
+		// if (!s.isEmpty())
+		// String lol = "lol"; //local variables are only allowed in a code
+		// block
 
 		// Testing addition of integer into a Long type ArrayList
 		// ArrayList<Long> x = new ArrayList<>();
