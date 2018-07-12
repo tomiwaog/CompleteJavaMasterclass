@@ -1,34 +1,61 @@
 package noteandpractice;
 
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-
 // import static java.lang.Math.abs; 
 // Using import static to access static method of a class
 
 public class Main extends Object {
 
 	public static void main(String[] args) {
-		DateTimeFormatter dtf1 = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
-		DateTimeFormatter dtf2 = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
-		DateTimeFormatter dtf3 = DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG);
-		System.out.println(dtf1.toString());
-		System.out.println(dtf2.toString());
-		System.out.println(dtf3.toString());
+
+
+		boolean x = false;
+		if (x)
+			System.out.println("x is "+ x);
+		//Testing local variable without block
+//		if (!s.isEmpty())
+//			String lol = "lol"; //local variables are only allowed in a code block
+
+
+		// Testing addition of integer into a Long type ArrayList
+		// ArrayList<Long> x = new ArrayList<>();
+		// x.add(34);
+		// Long myLong = new Long(4);
+		// System.out.println(myLong);
+		// Testing DateTimeFormatter
+		// DateTimeFormatter i = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		// LocalDate d = LocalDate.parse("2057-05-22", i);
+		//
+		// LocalDate dNoP = LocalDate.parse("2057-05-22");
+		// System.out.println(i.format(dNoP));
+		// System.out.println();
+		// DateTimeFormatter dtf1 =
+		// DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
+		// DateTimeFormatter dtf2 =
+		// DateTimeFormatter.ofLocalizedTime(FormatStyle.FULL);
+		// DateTimeFormatter dtf3 =
+		// DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG);
+		// DateTimeFormatter dtf4 =
+		// DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG,
+		// FormatStyle.SHORT);
+		// System.out.println(dtf1.toString());
+		// System.out.println(dtf2.toString());
+		// System.out.println(dtf3.toString());
+		// System.out.println(dtf4);
+
 		// switch statement analysis
-		int tom =0;
-		final int x=4;
-		switch(tom){
-			case 0:
-				System.out.println();
-			case x:
-				System.out.println("case 1");
-				break;
-			case (int)'f':
-			System.out.println("F Char allowed");
-				default:
-					System.out.println("Default");
-		}
+		// int tom =0;
+		// final int x=4;
+		// switch(tom){
+		// case 0:
+		// System.out.println();
+		// case x:
+		// System.out.println("case 1");
+		// break;
+		// case (int)'f':
+		// System.out.println("F Char allowed");
+		// default:
+		// System.out.println("Default");
+		// }
 		// Recreating String to assigning to array
 		// ArrayList<String> arr = new ArrayList<>();
 		// arr.add("One");
@@ -44,25 +71,25 @@ public class Main extends Object {
 
 		// Achieving String manipulation using StringBuilder
 		// No new object created or reassigning required like string
-//		ArrayList<StringBuilder> arrSB = new ArrayList<>();
-//		arrSB.add(new StringBuilder("One"));
-//		arrSB.add(new StringBuilder("Two"));
-//		arrSB.add(new StringBuilder("Three"));
-//
-//		for (StringBuilder j : arrSB) {
-//			j.append(j.length());
-//		}
-//		for (StringBuilder j : arrSB) {
-//			System.out.println(j);
-//		}
-		
-		//Equals method of String works differently to that of StringBuilder
-//		StringBuilder x = new StringBuilder("One");
-//		StringBuilder y = new StringBuilder("One");
-//		String i = new String("One");
-//		String j = new String("One");
-//		System.out.println(x.equals(y)); //false
-//		System.out.println(i.equals(j)); //true
+		// ArrayList<StringBuilder> arrSB = new ArrayList<>();
+		// arrSB.add(new StringBuilder("One"));
+		// arrSB.add(new StringBuilder("Two"));
+		// arrSB.add(new StringBuilder("Three"));
+		//
+		// for (StringBuilder j : arrSB) {
+		// j.append(j.length());
+		// }
+		// for (StringBuilder j : arrSB) {
+		// System.out.println(j);
+		// }
+
+		// Equals method of String works differently to that of StringBuilder
+		// StringBuilder x = new StringBuilder("One");
+		// StringBuilder y = new StringBuilder("One");
+		// String i = new String("One");
+		// String j = new String("One");
+		// System.out.println(x.equals(y)); //false
+		// System.out.println(i.equals(j)); //true
 		// Dog rex = new Dog("rex");
 		// Dog fluffy = new Dog("fluffy");
 
