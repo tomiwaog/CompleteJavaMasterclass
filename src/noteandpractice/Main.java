@@ -7,6 +7,10 @@ public class Main extends Object {
 
 	public static void main(String[] args) {
 
+		//Ternary constructs
+		boolean rich = true;
+		int debt = rich? 5>4?1:10 : 5>4?500 : 1000;
+		System.out.println("Debt is £"+debt);
 		// TEsting boolean assignment instead of comparison
 		// boolean x = false;
 		// if (x=true)
