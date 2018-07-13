@@ -7,9 +7,13 @@ public class Main extends Object {
 
 	public static void main(String[] args) {
 
+		int inte = 34;
+		long longa = 38;
+		
+		inte = (int) longa;
 		//Ternary constructs
 		boolean rich = true;
-		int debt = rich? 5>4?1:10 : 5>4?500 : 1000;
+		int debt = rich? 5>4?1:10 : 5<4?500 : Integer.MAX_VALUE;
 		System.out.println("Debt is £"+debt);
 		// TEsting boolean assignment instead of comparison
 		// boolean x = false;
