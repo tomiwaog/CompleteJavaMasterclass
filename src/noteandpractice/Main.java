@@ -7,29 +7,30 @@ public class Main extends Object {
 
 	public static void main(String[] args) {
 
-		int inte = 34;
-		long longa = 38;
-		
-		inte = (int) longa;
-		//Ternary constructs
-		boolean rich = true;
-		int debt = rich? 5>4?1:10 : 5<4?500 : Integer.MAX_VALUE;
-		System.out.println("Debt is £"+debt);
+//		int inte = 34;
+//		long longa = 38;
+//		
+//		//widening and casting priorities
+//		inte = (int) longa;
+//		//Ternary constructs
+//		boolean rich = true;
+//		int debt = rich? 5>4?1:10 : 5<4?500 : Integer.MAX_VALUE;
+//		System.out.println("Debt is £"+debt);
 		// TEsting boolean assignment instead of comparison
 		// boolean x = false;
 		// if (x=true)
 		// System.out.println("x is "+ x);
 		
 		//Java choosing its own else statement without curly braces
-		int score = 110;
-		if (score > 200)
-			if (score < 400)
-				if (score > 300)
-					System.out.println(1);
-				else
-					System.out.println(2);
-		else
-				System.out.println(3);
+//		int score = 110;
+//		if (score > 200)
+//			if (score < 400)
+//				if (score > 300)
+//					System.out.println(1);
+//				else
+//					System.out.println(2);
+//		else
+//				System.out.println(3);
 
 		// Testing local variable without block
 		// if (!s.isEmpty())
