@@ -1,7 +1,12 @@
 package noteandpractice;
 
 public class ImplictNExplicitCasting {
+	// Implicit typecasting (aka Widening or upcasting) is done by compiler when
+	// smaller data type is assigned to bigger data type
+	// I.e. There must be no loss of information.
 
+	// Explicit typecasting (aka Narrowing or downcasting)
+	// Possible loss of information
 	public static void main(String[] args) {
 
 		// WHOEVER SAYS SIZE DONT MATTERS
@@ -21,26 +26,28 @@ public class ImplictNExplicitCasting {
 		float float6 = 6;
 		double doubl7 = 7;
 
-		
-		// Short requires casting for size Integer, Long, Float and double and Char since char is stored as int
-		char1 = (char)char1; // requires explicit casting to compile
-		char1 = (char)byte2; // requires explicit casting to compile
-		char1 = (char)short3; // requires explicit casting to compile
+		// Short requires casting for size Integer, Long, Float and double and
+		// Char since char is stored as int
+		char1 = (char) char1; // requires explicit casting to compile
+		char1 = (char) byte2; // requires explicit casting to compile
+		char1 = (char) short3; // requires explicit casting to compile
 		char1 = (char) int4; // requires explicit casting to compile
 		char1 = (char) long5; // requires explicit casting to compile
 		char1 = (char) float6; // requires explicit casting to compile
 		char1 = (char) doubl7; // requires explicit casting to compile
-		
-		// Byte requires casting for size Integer, Long, Float and double and Char since char is stored as int
-		byte2 = (byte)char1; // requires explicit casting to compile
-		byte2 = (byte)short3; // requires explicit casting to compile
+
+		// Byte requires casting for size Integer, Long, Float and double and
+		// Char since char is stored as int
+		byte2 = (byte) char1; // requires explicit casting to compile
+		byte2 = (byte) short3; // requires explicit casting to compile
 		byte2 = (byte) int4; // requires explicit casting to compile
 		byte2 = (byte) long5; // requires explicit casting to compile
 		byte2 = (byte) float6; // requires explicit casting to compile
 		byte2 = (byte) doubl7; // requires explicit casting to compile
-		
-		// Short requires casting for size Integer, Long, Float and double and Char since char is stored as int
-		short3 = (short)char1; // requires explicit casting to compile
+
+		// Short requires casting for size Integer, Long, Float and double and
+		// Char since char is stored as int
+		short3 = (short) char1; // requires explicit casting to compile
 		short3 = byte2;
 		short3 = (short) int4; // requires explicit casting to compile
 		short3 = (short) long5; // requires explicit casting to compile
