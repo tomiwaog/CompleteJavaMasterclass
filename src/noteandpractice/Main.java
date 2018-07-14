@@ -24,9 +24,14 @@ public class Main extends Object {
 //		}
 //		System.out.println(estimatedCount==finalCount);
 		
-		// Testing multiple initialisation block, multiple conditions for termination block, and multiple update statement for update block
-		for (int i=1, j=2; i<=20 && j<4;i++,++j){
-			System.out.println("I is "+ i +" and j is "+ j);
+//		// Testing multiple initialisation block, multiple conditions for termination block, and multiple update statement for update block
+//		for (int i=1, j=2; i<=20 && j<4;i++,++j){
+//			System.out.println("I is "+ i +" and j is "+ j);
+//		}
+		
+		//Testing method calls in update block of the for loop statement.
+		for (int i=1; i<=5; i++, System.out.println("Method call: "+(int)(Math.random()*1000+1))){
+			System.out.println(i);
 		}
 		
 		//Switch argument must be constant, known prior to use for a case value
