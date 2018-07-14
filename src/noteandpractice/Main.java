@@ -30,10 +30,19 @@ public class Main extends Object {
 //		}
 		
 		//Testing method calls in update block of the for loop statement., statements run in the order of the placement
-		for (int i=1; i<=5; System.out.println("Method call: "+i+": "+(int)(Math.random()*1000+1)), i++){
-			System.out.println(i);
-		}
+//		for (int i=1; i<=5; System.out.println("Method call: "+i+": "+(int)(Math.random()*1000+1)), i++){
+//			System.out.println(i);
+//		}
 		
+		//For loop without initialisation, termination and update block
+		int i=1;
+		for (;;){
+			if (i>5){
+				break;
+			}
+			System.out.println("i is currently "+i);
+			i++;
+		}
 		//Switch argument must be constant, known prior to use for a case value
 //		final int x= 20;
 //		final int y=5;
