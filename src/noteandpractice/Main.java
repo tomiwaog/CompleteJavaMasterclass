@@ -13,6 +13,22 @@ public class Main extends Object {
 //			System.out.println("0");
 //		}
 		
+//		
+//		//Multiple initialization block, single termination block and multiple update statement
+//		int ctr=12;
+//		int estimatedCount =3;
+//		int finalCount =0;
+//		for (int j=10, k=14; j<=k; ++j,k=k-1,ctr--){
+//			System.out.println(j+":"+k+":"+ctr);
+//			finalCount++;
+//		}
+//		System.out.println(estimatedCount==finalCount);
+		
+		// Testing multiple initialisation block, multiple conditions for termination block, and multiple update statement for update block
+		for (int i=1, j=2; i<=20 && j<4;i++,++j){
+			System.out.println("I is "+ i +" and j is "+ j);
+		}
+		
 		//Switch argument must be constant, known prior to use for a case value
 		final int x= 20;
 		final int y=5;
