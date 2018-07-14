@@ -39,29 +39,36 @@ public class Main extends Object {
 		// System.out.println(i);
 		// }
 
-		//Demonstration of Nested Switch statement
-		int x = 0;
-		switch (x) {
-		case 0:
-			System.out.println("X is "+ x);
-			x = 1;
-			System.out.println("X changed to 1");
-			switch (x) {
-			case 0:
-				System.out.println("Nested switch level 0");
-				break;
-			case 1:
-				System.out.println("Nested switch created! Now level 1");
-				break;
-			case 2:
-				System.out.println("Case 2 on Nested switch");
+		//Clock demonstration using Nested For loop and Ternary operators
+		for (int i =0;i<24;){
+			for (int j=5;j<=60;j+=5){
+				System.out.println(i + (i<2?" HR":" HRS")+", "+j+" MINS gone");
 			}
-			break;
-		case 1:
-			System.out.println("Switch on level one. Case 1.");
-			break;
-
+			System.out.println("\n"+ ++i + ( i>1? " hours":" hour")+" gone\n");
 		}
+		
+		//Demonstration of Nested Switch statement
+//		int x = 0;
+//		switch (x) {
+//		case 0:
+//			System.out.println("X is "+ x);
+//			x = 1;
+//			System.out.println("X changed to 1");
+//			switch (x) {
+//			case 0:
+//				System.out.println("Nested switch level 0");
+//				break;
+//			case 1:
+//				System.out.println("Nested switch created! Now level 1");
+//				break;
+//			case 2:
+//				System.out.println("Case 2 on Nested switch");
+//			}
+//			break;
+//		case 1:
+//			System.out.println("Switch on level one. Case 1.");
+//			break;
+//		}
 //		// For loop without initialisation, termination and update block
 //		// All three parts of the for statements are optional
 //		int i = 1;
