@@ -14,7 +14,7 @@ public class Main extends Object {
 //		}
 		
 //		
-//		//Multiple initialization block, single termination block and multiple update statement
+//		//Multiple initialisation block, single termination block and multiple update statement
 //		int ctr=12;
 //		int estimatedCount =3;
 //		int finalCount =0;
@@ -29,24 +29,24 @@ public class Main extends Object {
 //			System.out.println("I is "+ i +" and j is "+ j);
 //		}
 		
-		//Testing method calls in update block of the for loop statement.
-		for (int i=1; i<=5; i++, System.out.println("Method call: "+(int)(Math.random()*1000+1))){
+		//Testing method calls in update block of the for loop statement., statements run in the order of the placement
+		for (int i=1; i<=5; System.out.println("Method call: "+i+": "+(int)(Math.random()*1000+1)), i++){
 			System.out.println(i);
 		}
 		
 		//Switch argument must be constant, known prior to use for a case value
-		final int x= 20;
-		final int y=5;
-		switch (x) {
-		case (5+4):
-			System.out.println();
-			break;
-		case (x+y):
-			System.out.println();
-			break;
-		default:
-			System.out.println("End!");
-		}
+//		final int x= 20;
+//		final int y=5;
+//		switch (x) {
+//		case (5+4):
+//			System.out.println();
+//			break;
+//		case (x+y):
+//			System.out.println();
+//			break;
+//		default:
+//			System.out.println("End!");
+//		}
 		
 
 
