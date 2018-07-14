@@ -51,51 +51,51 @@ public class Main extends Object {
 //			System.out.println("\n"+ ++i + ( i>1? " hours":" hour")+" gone\n");
 //		}
 		
-		ArrayList<String> myList = new ArrayList<String>();
-		myList.add("Tom");
-		myList.add("Joe");
-		myList.add("Phill");
-		ArrayList<String> yourList = new ArrayList<>();
-		yourList.add("Your parents");
-		yourList.add("you");
-		yourList.add("Your cousin");
-		yourList.add("your friends");
-		
-		ArrayList<ArrayList<String>> ourList = new ArrayList<>();
-		ourList.add(myList);
-		ourList.add(yourList);
-		
-		for (Iterator<String> i = myList.iterator(); i.hasNext();){
-			System.out.println(i.next());
-		}
-		System.out.println();
-		for (String x : myList){
-			System.out.println(x);
-		}
-		
-		
-		System.out.println("\nPrinting Nested aka multidimensional array\n");
-		//Using For loop to iterate through multidimensional array
-		System.out.println("\nUsing Iterator in for loop");
-		for (Iterator i = ourList.iterator();i.hasNext();){
-			for (Iterator j = ((ArrayList) i.next()).iterator(); j.hasNext();){
-				System.out.println(j.next());
-			}
-		}
-		
-		System.out.println("\nUsing traditional for loop");
-		for (int i=0; i<ourList.size(); i++){
-			for (int j=0;j<ourList.get(i).size();j++){
-				System.out.println(ourList.get(i).get(j));
-			}
-		}
-		
-		System.out.println("\nUsing For-each for loop");
-		for (ArrayList<String> outerObj : ourList){
-			for (String innerObj : outerObj){
-				System.out.println(innerObj);
-			}
-		}
+//		ArrayList<String> myList = new ArrayList<String>();
+//		myList.add("Tom");
+//		myList.add("Joe");
+//		myList.add("Phill");
+//		ArrayList<String> yourList = new ArrayList<>();
+//		yourList.add("Your parents");
+//		yourList.add("you");
+//		yourList.add("Your cousin");
+//		yourList.add("your friends");
+//		
+//		ArrayList<ArrayList<String>> ourList = new ArrayList<>();
+//		ourList.add(myList);
+//		ourList.add(yourList);
+//		
+//		for (Iterator<String> i = myList.iterator(); i.hasNext();){
+//			System.out.println(i.next());
+//		}
+//		System.out.println();
+//		for (String x : myList){
+//			System.out.println(x);
+//		}
+//		
+//		
+//		System.out.println("\nPrinting Nested aka multidimensional array\n");
+//		//Using For loop to iterate through multidimensional array
+//		System.out.println("\nUsing Iterator in for loop");
+//		for (Iterator i = ourList.iterator();i.hasNext();){
+//			for (Iterator j = ((ArrayList) i.next()).iterator(); j.hasNext();){
+//				System.out.println(j.next());
+//			}
+//		}
+//		
+//		System.out.println("\nUsing traditional for loop");
+//		for (int i=0; i<ourList.size(); i++){
+//			for (int j=0;j<ourList.get(i).size();j++){
+//				System.out.println(ourList.get(i).get(j));
+//			}
+//		}
+//		
+//		System.out.println("\nUsing For-each for loop");
+//		for (ArrayList<String> outerObj : ourList){
+//			for (String innerObj : outerObj){
+//				System.out.println(innerObj);
+//			}
+//		}
 		
 		//Demonstration of Nested Switch statement
 //		int x = 0;
@@ -128,6 +128,33 @@ public class Main extends Object {
 //			}
 //			System.out.println("i is currently " + i++);
 //		}
+		
+		
+		//Limitation of Enhanced for loop
+		int[] myArray = new int[5];
+		//Attempt to use enhanced for loop
+		int i=0;
+		myArray = new int[5];
+		for (int x : myArray){
+			if (((myArray[i]=i)%2)==0)
+				myArray[i]=20;		
+			if(i++==5)
+				break;
+		}
+		for (int x: myArray){
+			System.out.println(x);
+		}
+		
+		//Successful use of Traditional forloop on same data#
+		myArray = new int[5];
+		for (int j=0;j<myArray.length;++j){
+			if (((myArray[j]=j)%2)==0)
+				myArray[j]=20;
+		}
+		for (int x: myArray){
+			System.out.println(x);
+		}
+		
 		// Switch argument must be constant, known prior to use for a case value
 		// final int x= 20;
 		// final int y=5;
