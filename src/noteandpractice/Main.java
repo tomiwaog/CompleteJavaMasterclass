@@ -6,84 +6,86 @@ package noteandpractice;
 public class Main extends Object {
 
 	public static void main(String[] args) {
-		//Testing prohibited data type (long) on switch cases
-//		long longNum = 34;
-//		switch(longNum){
-//		case 0:
-//			System.out.println("0");
-//		}
-		
-//		
-//		//Multiple initialisation block, single termination block and multiple update statement
-//		int ctr=12;
-//		int estimatedCount =3;
-//		int finalCount =0;
-//		for (int j=10, k=14; j<=k; ++j,k=k-1,ctr--){
-//			System.out.println(j+":"+k+":"+ctr);
-//			finalCount++;
-//		}
-//		System.out.println(estimatedCount==finalCount);
-		
-//		// Testing multiple initialisation block, multiple conditions for termination block, and multiple update statement for update block
-//		for (int i=1, j=2; i<=20 && j<4;i++,++j){
-//			System.out.println("I is "+ i +" and j is "+ j);
-//		}
-		
-		//Testing method calls in update block of the for loop statement., statements run in the order of the placement
-//		for (int i=1; i<=5; System.out.println("Method call: "+i+": "+(int)(Math.random()*1000+1)), i++){
-//			System.out.println(i);
-//		}
-		
-		//For loop without initialisation, termination and update block
-		int i=1;
-		for (;;){//Semi colons marking end of block must be specified
-			if (i>5){
+		// Testing prohibited data type (long) on switch cases
+		// long longNum = 34;
+		// switch(longNum){
+		// case 0:
+		// System.out.println("0");
+		// }
+
+		//
+		// //Multiple initialisation block, single termination block and
+		// multiple update statement
+		// int ctr=12;
+		// int estimatedCount =3;
+		// int finalCount =0;
+		// for (int j=10, k=14; j<=k; ++j,k=k-1,ctr--){
+		// System.out.println(j+":"+k+":"+ctr);
+		// finalCount++;
+		// }
+		// System.out.println(estimatedCount==finalCount);
+
+		// // Testing multiple initialisation block, multiple conditions for
+		// termination block, and multiple update statement for update block
+		// for (int i=1, j=2; i<=20 && j<4;i++,++j){
+		// System.out.println("I is "+ i +" and j is "+ j);
+		// }
+
+		// Testing method calls in update block of the for loop statement.,
+		// statements run in the order of the placement
+		// for (int i=1; i<=5;
+		// System.out.println("Method call: "+i+": "+(int)(Math.random()*1000+1)),
+		// i++){
+		// System.out.println(i);
+		// }
+
+		// For loop without initialisation, termination and update block
+		// All three parts of the for statements are optional
+		int i = 1;
+		for (;;) {// Semi-colons marking end of block must be specified
+			if (i > 5) {
 				break;
 			}
-			System.out.println("i is currently "+i);
-			i++;
+			System.out.println("i is currently " + i++);
 		}
-		//Switch argument must be constant, known prior to use for a case value
-//		final int x= 20;
-//		final int y=5;
-//		switch (x) {
-//		case (5+4):
-//			System.out.println();
-//			break;
-//		case (x+y):
-//			System.out.println();
-//			break;
-//		default:
-//			System.out.println("End!");
-//		}
-		
+		// Switch argument must be constant, known prior to use for a case value
+		// final int x= 20;
+		// final int y=5;
+		// switch (x) {
+		// case (5+4):
+		// System.out.println();
+		// break;
+		// case (x+y):
+		// System.out.println();
+		// break;
+		// default:
+		// System.out.println("End!");
+		// }
 
-
-		
-//		int inte = 34;
-//		long longa = 38;
-//		
-//		//widening and casting priorities
-//		inte = (int) longa;
-//		//Ternary constructs
-//		boolean rich = true;
-//		int debt = rich? 5>4?1:10 : 5<4?500 : Integer.MAX_VALUE;
-//		System.out.println("Debt is £"+debt);
+		// int inte = 34;
+		// long longa = 38;
+		//
+		// //widening and casting priorities
+		// inte = (int) longa;
+		// //Ternary constructs
+		// boolean rich = true;
+		// int debt = rich? 5>4?1:10 : 5<4?500 : Integer.MAX_VALUE;
+		// System.out.println("Debt is £"+debt);
 		// TEsting boolean assignment instead of comparison
 		// boolean x = false;
 		// if (x=true)
 		// System.out.println("x is "+ x);
-		
-		//Java choosing its own else statement without curly braces
-//		int score = 110;
-//		if (score > 200)
-//			if (score < 400)
-//				if (score > 300)
-//					System.out.println(1);
-//				else
-//					System.out.println(2);
-//		else
-//				System.out.println(3);
+
+		// Java choosing its own else statement without curly braces
+		// int score = 110;
+		// if (score > 200)
+		// if (score < 400)
+		// if (score > 300)
+		// System.out.println(1);
+		// else
+		// System.out.println(2);
+		// else
+		// System.out.println(3);
 
 		// Testing local variable without block
 		// if (!s.isEmpty())
