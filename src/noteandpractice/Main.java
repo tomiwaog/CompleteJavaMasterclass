@@ -39,15 +39,38 @@ public class Main extends Object {
 		// System.out.println(i);
 		// }
 
-		// For loop without initialisation, termination and update block
-		// All three parts of the for statements are optional
-		int i = 1;
-		for (;;) {// Semi-colons marking end of block must be specified
-			if (i > 5) {
+		//Demonstration of Nested Switch statement
+		int x = 0;
+		switch (x) {
+		case 0:
+			System.out.println("X is "+ x);
+			x = 1;
+			System.out.println("X changed to 1");
+			switch (x) {
+			case 0:
+				System.out.println("Nested switch level 0");
 				break;
+			case 1:
+				System.out.println("Nested switch created! Now level 1");
+				break;
+			case 2:
+				System.out.println("Case 2 on Nested switch");
 			}
-			System.out.println("i is currently " + i++);
+			break;
+		case 1:
+			System.out.println("Switch on level one. Case 1.");
+			break;
+
 		}
+//		// For loop without initialisation, termination and update block
+//		// All three parts of the for statements are optional
+//		int i = 1;
+//		for (;;) {// Semi-colons marking end of block must be specified
+//			if (i > 5) {
+//				break;
+//			}
+//			System.out.println("i is currently " + i++);
+//		}
 		// Switch argument must be constant, known prior to use for a case value
 		// final int x= 20;
 		// final int y=5;
