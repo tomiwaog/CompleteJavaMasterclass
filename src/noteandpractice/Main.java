@@ -1,10 +1,14 @@
 package noteandpractice;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 // import static java.lang.Math.abs; 
 // Using import static to access static method of a class
 
 public class Main extends Object {
 
+	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 		// Testing prohibited data type (long) on switch cases
 		// long longNum = 34;
@@ -40,11 +44,57 @@ public class Main extends Object {
 		// }
 
 		//Clock demonstration using Nested For loop and Ternary operators
-		for (int i =0;i<24;){
-			for (int j=5;j<=60;j+=5){
-				System.out.println(i + (i<2?" HR":" HRS")+", "+j+" MINS gone");
+//		for (int i =0;i<24;){
+//			for (int j=5;j<=60;j+=5){
+//				System.out.println(i + (i<2?" HR":" HRS")+", "+j+" MINS gone");
+//			}
+//			System.out.println("\n"+ ++i + ( i>1? " hours":" hour")+" gone\n");
+//		}
+		
+		ArrayList<String> myList = new ArrayList<String>();
+		myList.add("Tom");
+		myList.add("Joe");
+		myList.add("Phill");
+		ArrayList<String> yourList = new ArrayList<>();
+		yourList.add("Your parents");
+		yourList.add("you");
+		yourList.add("Your cousin");
+		yourList.add("your friends");
+		
+		ArrayList<ArrayList<String>> ourList = new ArrayList<>();
+		ourList.add(myList);
+		ourList.add(yourList);
+		
+		for (Iterator<String> i = myList.iterator(); i.hasNext();){
+			System.out.println(i.next());
+		}
+		System.out.println();
+		for (String x : myList){
+			System.out.println(x);
+		}
+		
+		
+		System.out.println("\nPrinting Nested aka multidimensional array\n");
+		//Using For loop to iterate through multidimensional array
+		System.out.println("\nUsing Iterator in for loop");
+		for (Iterator i = ourList.iterator();i.hasNext();){
+			for (Iterator j = ((ArrayList) i.next()).iterator(); j.hasNext();){
+				System.out.println(j.next());
 			}
-			System.out.println("\n"+ ++i + ( i>1? " hours":" hour")+" gone\n");
+		}
+		
+		System.out.println("\nUsing traditional for loop");
+		for (int i=0; i<ourList.size(); i++){
+			for (int j=0;j<ourList.get(i).size();j++){
+				System.out.println(ourList.get(i).get(j));
+			}
+		}
+		
+		System.out.println("\nUsing For-each for loop");
+		for (ArrayList<String> outerObj : ourList){
+			for (String innerObj : outerObj){
+				System.out.println(innerObj);
+			}
 		}
 		
 		//Demonstration of Nested Switch statement
