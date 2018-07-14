@@ -6,7 +6,30 @@ package noteandpractice;
 public class Main extends Object {
 
 	public static void main(String[] args) {
+		//Testing prohibited data type (long) on switch cases
+//		long longNum = 34;
+//		switch(longNum){
+//		case 0:
+//			System.out.println("0");
+//		}
+		
+		//Switch argument must be constant, known prior to use for a case value
+		final int x= 20;
+		final int y=5;
+		switch (x) {
+		case (5+4):
+			System.out.println();
+			break;
+		case (x+y):
+			System.out.println();
+			break;
+		default:
+			System.out.println("End!");
+		}
+		
 
+
+		
 //		int inte = 34;
 //		long longa = 38;
 //		
