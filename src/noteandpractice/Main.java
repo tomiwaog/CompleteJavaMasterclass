@@ -36,7 +36,7 @@ public class Main extends Object {
 		
 		//For loop without initialisation, termination and update block
 		int i=1;
-		for (;;){
+		for (;;){//Semi colons marking end of block must be specified
 			if (i>5){
 				break;
 			}
