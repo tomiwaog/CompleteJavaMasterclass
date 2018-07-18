@@ -28,6 +28,7 @@ public class ImplictNExplicitCasting {
 
 		// Short requires casting for size Integer, Long, Float and double and
 		// Char since char is stored as int
+		// When calculation is applied on char,byte,short its automatically converted to int
 		char1 = (char) char1; // requires explicit casting to compile
 		char1 = (char) byte2; // requires explicit casting to compile
 		char1 = (char) short3; // requires explicit casting to compile
@@ -49,6 +50,7 @@ public class ImplictNExplicitCasting {
 		// Char since char is stored as int
 		short3 = (short) char1; // requires explicit casting to compile
 		short3 = byte2;
+		short3 = (short)(byte2+byte2); //when operator is applied unto byte, casting is required
 		short3 = (short) int4; // requires explicit casting to compile
 		short3 = (short) long5; // requires explicit casting to compile
 		short3 = (short) float6; // requires explicit casting to compile
@@ -58,6 +60,7 @@ public class ImplictNExplicitCasting {
 		int4 = char1;
 		int4 = byte2;
 		int4 = short3;
+		int4 = short3+short3;
 		int4 = (int) long5; // requires explicit casting to compile
 		int4 = (int) float6; // requires explicit casting to compile
 		int4 = (int) doubl7; // requires explicit casting to compile

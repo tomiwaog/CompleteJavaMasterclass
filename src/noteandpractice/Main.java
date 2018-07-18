@@ -1,14 +1,11 @@
 package noteandpractice;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 
 // import static java.lang.Math.abs; 
 // Using import static to access static method of a class
 
 public class Main extends Object {
 
-	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 		// Testing prohibited data type (long) on switch cases
 		// long longNum = 34;
@@ -130,30 +127,30 @@ public class Main extends Object {
 //		}
 		
 		
-		//Limitation of Enhanced for loop
-		int[] myArray = new int[5];
-		//Attempt to use enhanced for loop
-		int i=0;
-		myArray = new int[5];
-		for (int x : myArray){
-			if (((myArray[i]=i)%2)==0)
-				myArray[i]=20;		
-			if(i++==5)
-				break;
-		}
-		for (int x: myArray){
-			System.out.println(x);
-		}
-		
-		//Successful use of Traditional forloop on same data#
-		myArray = new int[5];
-		for (int j=0;j<myArray.length;++j){
-			if (((myArray[j]=j)%2)==0)
-				myArray[j]=20;
-		}
-		for (int x: myArray){
-			System.out.println(x);
-		}
+//		//Limitation of Enhanced for loop
+//		int[] myArray = new int[5];
+//		//Attempt to use enhanced for loop
+//		int i=0; //outside counter is required, defeats the whole purpose of for-loop
+//		myArray = new int[5];
+//		for (int x : myArray){
+//			if (((myArray[i]=i)%2)==0)
+//				myArray[i]=20;		
+//			if(i++==5)
+//				break;
+//		}
+//		for (int x: myArray){
+//			System.out.println(x);
+//		}
+//		
+//		//Successful use of Traditional forloop on same data#
+//		myArray = new int[5];
+//		for (int j=0;j<myArray.length;++j){
+//			if (((myArray[j]=j)%2)==0)
+//				myArray[j]=20;
+//		}
+//		for (int x: myArray){
+//			System.out.println(x);
+//		}
 		
 		// Switch argument must be constant, known prior to use for a case value
 		// final int x= 20;
