@@ -35,6 +35,15 @@ class Animal{
 	
 }
 
+interface Interviewer{
+	Object interviewCounts();
+}
+
+class Manager implements Interviewer{//Allows as override as Integer is a subclass of Object.
+	public Integer interviewCounts(){
+		return 0;
+	}
+}
 interface Runner{
 	void jump(); //implicitly abstract
 	
