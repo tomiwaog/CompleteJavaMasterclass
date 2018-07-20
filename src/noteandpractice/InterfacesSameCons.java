@@ -11,6 +11,7 @@ public class InterfacesSameCons implements boy,girl {
 		//System.out.println(boy.gender="Man"); //Wouldn't work as Interfaces variables are [static final]
 		
 		System.out.println(person.maxLength());
+		//System.out.println(person.x); //Ambiguous as both interfaces utilises the same name
 	}
 
 
@@ -32,6 +33,7 @@ public class InterfacesSameCons implements boy,girl {
 }
 
 interface boy{
+	int x= 555;
 	String gender="Boy";
 	int currPos();
 	
@@ -41,6 +43,7 @@ interface boy{
 }
 
 interface girl{
+	int x=5;
 	String gender="Boy"; 
 	//String currPos(); //Uncomment for understanding.[int currPos(int y); would count as seperate method which would require implementation.
 	
