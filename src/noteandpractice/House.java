@@ -1,10 +1,13 @@
 package noteandpractice;
 
+import java.util.function.Predicate;
+
 public class House {
 	// Polymorphism demonstration
 	Number printNum() {
 		return 30;
 	}
+
 
 	public static void main(String[] args) {
 		House house = new House();
@@ -15,6 +18,15 @@ public class House {
 		Room realRoom = new Room();
 		Object x = new String("Object");
 		realRoom.resize(x);
+
+		//Lambda use must be functional interface - interface with one abstract method
+		@SuppressWarnings("unused")
+		lambdaEx exp = fun -> 5 >3;
+		System.out.println();
+		
+		Predicate<Integer> pre = param -> 4*6>30;
+		System.out.println("Pre test is: "+pre.test(4));
+		
 	}
 }
 
@@ -42,8 +54,22 @@ class Room extends House implements Resizable{
 }
 
 interface Resizable{
-	public default Object resize(Object obj){
+	default Object resize(Object obj){
 		System.out.println("Interface | Object param version of Resize. Return type: Object");
 		return null;
+	}
+}
+
+interface lambdaEx{
+	//Lambda expression can have other method type, but must have only one abstract type.
+	abstract boolean check(Object o);
+	
+	default void justNot(){	
+	}
+	default void justNot2(){	
+	}
+	static void ok(){	
+	}
+	static void ok2(){	
 	}
 }
