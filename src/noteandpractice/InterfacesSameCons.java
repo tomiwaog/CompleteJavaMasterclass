@@ -1,17 +1,18 @@
 package noteandpractice;
 
-public class InterfacesSameCons implements boy,girl {
+public class InterfacesSameCons implements Boy,Girl {
 	
 	public static void main(String[] args) {
 		
 		InterfacesSameCons person = new InterfacesSameCons();
 		
 		//System.out.println(person.gender); //Would be ambiguous call.
-		System.out.println(boy.gender);
+		//System.out.println(person.specialInt); //on the other hand would work as there aren't any duplicates.
+		System.out.println(Boy.gender);
 		//System.out.println(boy.gender="Man"); //Wouldn't work as Interfaces variables are [static final]
 		
 		System.out.println(person.maxLength());
-		//System.out.println(person.x); //Ambiguous as both interfaces utilises the same name
+		//System.out.println(Person.x); //Ambiguous as both interfaces utilises the same name. Interface.variable would work
 	}
 
 
@@ -32,7 +33,7 @@ public class InterfacesSameCons implements boy,girl {
 
 }
 
-interface boy{
+interface Boy{
 	int x= 555;
 	String gender="Boy";
 	int currPos();
@@ -40,12 +41,17 @@ interface boy{
 	static int maxLength(){
 		return 4;
 	}
+	
+	static int distance(){
+		return 0;
+	}
 }
 
-interface girl{
+interface Girl{
 	int x=5;
+	int specialInt =000;
 	String gender="Boy"; 
-	//String currPos(); //Uncomment for understanding.[int currPos(int y); would count as seperate method which would require implementation.
+	//String currPos(); //implementer wont compile if it also implements Boy. Uncomment for understanding. | int currPos(int y); would on the other hand would count as separate method which would require implementation.
 	
 	static int distance(){
 		return 0;

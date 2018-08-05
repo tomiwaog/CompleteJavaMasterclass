@@ -20,11 +20,11 @@ public class House {
 		realRoom.resize(x);
 
 		//Lambda use must be functional interface - interface with one abstract method
-		@SuppressWarnings("unused")
-		lambdaEx exp = fun -> 5 >3;
+		lambdaEx exp = fun -> ((String)fun).length()<=5;
+		System.out.println(exp.check("Funny"));
 		System.out.println();
 		
-		Predicate<Integer> pre = param -> 4*6>30;
+		Predicate<Integer> pre = param -> param<30;
 		System.out.println("Pre test is: "+pre.test(4));
 		
 	}
