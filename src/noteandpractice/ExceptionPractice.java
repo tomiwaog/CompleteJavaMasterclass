@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class ExceptionPractice {
+	@SuppressWarnings("null")
 	public static void main(String[] args) {
 
 		// Demonstrating double return in Try catch block. i.e. return in catch
@@ -11,12 +12,12 @@ public class ExceptionPractice {
 		DualReturn dual = new DualReturn();
 		System.out.println("In main :" + dual.getInt());
 
-		//Try block with Finally only
-		try{
-			System.out.println(4/2);
-		}
-		finally{
-			
+		String nullStr=null;
+		// Try block with Finally only
+		try {
+			System.out.println(nullStr.length());
+		}finally {
+			System.out.println("Finally without a catch!");
 		}
 		String str = "Infinity";
 		System.out.println("Char at 5 is " + str.charAt(5));
@@ -54,12 +55,15 @@ public class ExceptionPractice {
 	}
 
 	// Checked Exceptions requires declaration.
+
 	static void myChEx() throws FileNotFoundException {
+		@SuppressWarnings({ "unused", "resource" })
 		FileInputStream y = new FileInputStream("");
 		System.out.println("my ChEx method ends!");
 	}
 }
 
+@SuppressWarnings("serial")
 class RE extends ArrayIndexOutOfBoundsException {
 	public String toString() {
 		return "RE stands for RuntimeException";
@@ -76,8 +80,8 @@ class DualReturn {
 			System.out.println("about to return " + returnVal);
 			return returnVal;
 		} finally {
-			returnVal +=10;
-			System.out.println("Return value is now "+ returnVal);
+			returnVal += 10;
+			System.out.println("Return value is now " + returnVal);
 		}
 		return returnVal;
 	}
