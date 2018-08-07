@@ -7,7 +7,8 @@ package noteandpractice;
 public class Main extends Object {
 
 	public static void main(String[] args) {
-		System.out.println("Dividing decimal by Zero : "+23.4/0); //Results in infinity
+		System.out.println("Dividing decimal by Zero : "+23.4/0); //Results in infinity whether negative or positive
+		System.out.println("Dividing decimal by Zero.zero : "+23.4/0.0); //Results in infinity whether negative or positive
 		// Testing prohibited data type (long) on switch cases
 		// long longNum = 34;
 		// switch(longNum){
