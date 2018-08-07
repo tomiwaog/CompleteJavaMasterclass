@@ -7,14 +7,15 @@ public class CatchingErrors {
 		// You mustn't catch an Error, but here's a demonstration
 		try {
 			myMethod();
-		} catch (StackOverflowError s) {
-			System.out.println("\naaaaCaught an Error stopping now!");
-			throw new FullMemory();
+		}
+		catch (StackOverflowError s) {
+			for (int i=0;i<2;++i)
+				System.out.println(i);
+			//throw new FullMemory();
 		}
 	}
 
 	public static void myMethod() {
-		System.out.println("Running my Method!");
 		myMethod();
 	}
 }
