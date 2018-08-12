@@ -1,5 +1,6 @@
 package noteandpractice;
-
+import java.util.*;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,7 @@ class Tree extends Plant {
 
 public class Test {
 	public static void main(String[] args) {
+		//Date dateo; //JVM prevents ambiguity, explicit import required
 		//Tree tree = new Tree(" finally");
 		int []array = new int[]{1,2,3,4,5,6};
 		List<Integer> arrayList = new ArrayList<Integer>();
