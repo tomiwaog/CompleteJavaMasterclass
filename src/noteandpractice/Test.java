@@ -25,6 +25,8 @@ class Tree extends Plant {
 
 public class Test {
 	public static void main(String[] args) {
+		int num = 2*5+3*4-8;
+		System.out.println("num is "+ num); //Operator precedence
 		//Date dateo; //JVM prevents ambiguity, explicit import required
 		//Tree tree = new Tree(" finally");
 		int []array = new int[]{1,2,3,4,5,6};
