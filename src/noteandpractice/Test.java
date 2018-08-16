@@ -25,14 +25,6 @@ class Tree extends Plant {
 
 public class Test {
 	public static void main(String[] args) {
-		int xo = 3;
-		int yo = ++xo *5  / xo-- + --xo;
-		System.out.println("xo "+xo);
-		System.out.println("yo "+ yo);
-		long lo = 345;
-		double dble = 3.0;
-		float flo = 5;
-		System.out.println(dble+flo);
 		int num = 2*5+3*4-8;
 		System.out.println("num is "+ num); //Operator precedence
 		//Date dateo; //JVM prevents ambiguity, explicit import required
